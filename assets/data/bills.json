@@ -647,58 +647,53 @@
       "upcoming_hearing": null
     }
   ],
-  "kiosk_comparison": [
+  "policy_landscape": [
     {
-      "package": "HB 5469 / HB 5470",
-      "approach": "Regulate and license",
-      "core_mechanics": "Disclosures, warnings, receipts, blockchain analytics, antifraud controls, DIFS reporting, local preemption, and money-transmitter licensing.",
-      "sanctions": "Up to $1,000 per knowing and willful violation.",
-      "lead": "DIFS and courts",
-      "status": "House Regulatory Reform since 2026-01-22",
-      "bottom_line": "Keeps kiosks legal under a detailed compliance regime."
+      "area": "Tax treatment and transaction rules",
+      "bill_count": 3,
+      "bills": "HB 4511, HB 4513, HB 5132",
+      "current_picture": "Pending proposals address tax neutrality for digital-asset payments, a mining-income deduction, and a sub-$200 transaction and reporting exemption.",
+      "status": "HB 4511 is on House third reading; HB 4513 and HB 5132 remain in House committees.",
+      "tax_design_lens": "Define whether the policy is neutral treatment, a targeted preference, or de minimis relief, then specify valuation, attribution, aggregation, and reporting rules."
     },
     {
-      "package": "HB 5986 / HB 5987",
-      "approach": "Civil ban plus lottery leverage",
-      "core_mechanics": "Bans installation, operation, and premises permission; companion permits suspension of a lottery-agent license.",
-      "sanctions": "Up to $100 per day to GF; possible lottery-license suspension.",
-      "lead": "Attorney General, county prosecutors, Lottery Commissioner",
-      "status": "House Regulatory Reform since 2026-05-19",
-      "bottom_line": "Low-dollar civil prohibition with retailer leverage."
+      "area": "State assets, payments, and payroll",
+      "bill_count": 4,
+      "bills": "HB 4086, HB 4087, HB 4510, HB 5670",
+      "current_picture": "Proposals cover a state-backed digital currency, crypto-paid taxes and fees, state and retirement-fund investment, and a digital-currency wage option.",
+      "status": "HB 4510 is on House third reading; the other three remain in House committees.",
+      "tax_design_lens": "Resolve asset eligibility, valuation time, conversion, custody, withholding, settlement, and allocation of receipts among state funds."
     },
     {
-      "package": "SB 980",
-      "approach": "Civil-infraction ban",
-      "core_mechanics": "Bans installation, operation, and premises permission.",
-      "sanctions": "$2,000-$5,000 first violation; $5,000-$10,000 repeat violations.",
-      "lead": "Courts",
-      "status": "Senate Finance, Insurance, and Consumer Protection since 2026-05-19",
-      "bottom_line": "Senate civil-ban alternative with larger fines than HB 5986."
+      "area": "Mining, siting, and data centers",
+      "bill_count": 4,
+      "bills": "HB 4085, HB 4512, HB 5777, HB 5882",
+      "current_picture": "The bills address industrial zoning, abandoned-well mining, large-facility registration and financial security, and limits on local moratoria.",
+      "status": "All four remain in House committees.",
+      "tax_design_lens": "Facility thresholds, qualifying activity, nexus, incentives, registration fees, environmental obligations, and state-local authority would shape any mining levy."
     },
     {
-      "package": "HB 6077 / HB 6078",
-      "approach": "Felony ban",
-      "core_mechanics": "Bans operation and premises permission; enhanced treatment for vulnerable adults, large losses, or organized fraud; sentencing companion.",
-      "sanctions": "Up to 5 years/$50,000, enhanced to 10 years/$100,000; forfeiture and transaction-based multiples.",
-      "lead": "Attorney General, county prosecutors, courts",
-      "status": "House Regulatory Reform since 2026-06-11",
-      "bottom_line": "Most punitive kiosk proposal."
+      "area": "Money transmission and custody",
+      "bill_count": 2,
+      "bills": "HB 5544, SB 835",
+      "current_picture": "Competing modernization bills define when virtual-currency exchange, transfer, or custody falls inside or outside money-transmitter regulation.",
+      "status": "HB 5544 passed the House and is in a Senate committee; SB 835 remains in a Senate committee.",
+      "tax_design_lens": "A tax registration or third-party reporting system cannot assume every relevant crypto intermediary is licensed as a money transmitter."
     },
     {
-      "package": "HB 6222 / HB 6223",
-      "approach": "Targeted regulation",
-      "core_mechanics": "$500 daily per-operator cap, 24-hour new-user hold, secure sites, warnings, receipts, records, and MCPA treatment.",
-      "sanctions": "Up to $10,000 or $25,000 per violating transaction to GF.",
-      "lead": "Attorney General",
-      "status": "House Regulatory Reform since 2026-07-16",
-      "bottom_line": "Newest compromise approach: strict anti-fraud controls without a ban."
+      "area": "Retail crypto ATMs and consumer protection",
+      "bill_count": 9,
+      "bills": "HB 5469, HB 5470, HB 5986, HB 5987, SB 980, HB 6077, HB 6078, HB 6222, HB 6223",
+      "current_picture": "Michigan proposals range from licensing and anti-fraud controls to civil or felony bans, with the newest package using transaction caps, holds, warnings, receipts, and records.",
+      "status": "All nine remain in House or Senate committees.",
+      "tax_design_lens": "Operator and premises responsibility, transaction records, thresholds, aggregation, and enforcement are useful design inputs; fines are not a dependable tax base."
     }
   ],
   "key_updates": [
     {
       "date": "2026-07-16",
       "bills": "HB 6222 / HB 6223",
-      "update": "New targeted kiosk-regulation package introduced; committee only, not a tax and not enacted."
+      "update": "New targeted crypto-ATM regulation package introduced; committee only, not a tax and not enacted."
     },
     {
       "date": "2026-07-01",
@@ -708,12 +703,12 @@
     {
       "date": "2026-06-11",
       "bills": "HB 6077 / HB 6078",
-      "update": "Felony kiosk-ban package introduced and referred to House Regulatory Reform."
+      "update": "Felony crypto-ATM ban package introduced and referred to House Regulatory Reform."
     },
     {
       "date": "2026-05-19",
       "bills": "HB 5986 / HB 5987 and SB 980",
-      "update": "Civil kiosk-ban alternatives introduced in both chambers."
+      "update": "Civil crypto-ATM ban alternatives introduced in both chambers."
     },
     {
       "date": "2026-03-11",

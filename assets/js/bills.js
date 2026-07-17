@@ -17,7 +17,7 @@
     sort: document.querySelector("#sort-bills"),
     clear: document.querySelector("#clear-filters"),
     copy: document.querySelector("#copy-briefing"),
-    comparison: document.querySelector("#comparison-grid"),
+    landscape: document.querySelector("#landscape-list"),
     updates: document.querySelector("#update-list"),
   };
 
@@ -262,25 +262,31 @@
     elements.updates.replaceChildren(...items);
   }
 
-  function renderComparison(packages) {
-    const cards = packages.map((item) => {
-      const card = document.createElement("article");
-      card.className = "comparison-card";
-      card.innerHTML = `
-        <h3>${escapeHtml(item.package)}</h3>
-        <p class="comparison-approach">${escapeHtml(item.approach)}</p>
-        <p>${escapeHtml(item.bottom_line)}</p>
-        <dl>
-          <dt>Core mechanics</dt>
-          <dd>${escapeHtml(item.core_mechanics)}</dd>
-          <dt>Sanctions</dt>
-          <dd>${escapeHtml(item.sanctions)}</dd>
-          <dt>Current status</dt>
-          <dd>${escapeHtml(item.status)}</dd>
-        </dl>`;
-      return card;
+  function renderLandscape(areas) {
+    const rows = areas.map((item) => {
+      const row = document.createElement("article");
+      row.className = "landscape-row";
+      row.innerHTML = `
+        <div class="landscape-identity">
+          <h3>${escapeHtml(item.area)}</h3>
+          <p>${escapeHtml(item.bill_count)} bills</p>
+          <span>${escapeHtml(item.bills)}</span>
+        </div>
+        <div>
+          <h4>Current proposals</h4>
+          <p>${escapeHtml(item.current_picture)}</p>
+        </div>
+        <div>
+          <h4>Tax design lens</h4>
+          <p>${escapeHtml(item.tax_design_lens)}</p>
+        </div>
+        <div>
+          <h4>Status</h4>
+          <p>${escapeHtml(item.status)}</p>
+        </div>`;
+      return row;
     });
-    elements.comparison.replaceChildren(...cards);
+    elements.landscape.replaceChildren(...rows);
   }
 
   function briefingText() {
@@ -418,7 +424,7 @@
     populateSelect(elements.attention, data.bills.map((bill) => bill.attention));
     renderBills();
     renderUpdates(data.key_updates);
-    renderComparison(data.kiosk_comparison);
+    renderLandscape(data.policy_landscape);
     bindControls();
   }
 

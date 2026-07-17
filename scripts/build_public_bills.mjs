@@ -125,14 +125,13 @@ const publicData = {
     enacted: countStage("Enacted"),
   },
   bills,
-  kiosk_comparison: source.kioskComparison.map((item) => ({
-    package: item.package,
-    approach: item.approach,
-    core_mechanics: item.coreMechanics,
-    sanctions: item.sanctions,
-    lead: item.lead,
+  policy_landscape: source.policyLandscape.map((item) => ({
+    area: item.area,
+    bill_count: item.billCount,
+    bills: item.bills,
+    current_picture: item.currentPicture,
     status: item.status,
-    bottom_line: item.bottomLine,
+    tax_design_lens: item.taxDesignLens,
   })),
   key_updates: source.keyUpdates.map(([date, billsLabel, update]) => ({
     date,
