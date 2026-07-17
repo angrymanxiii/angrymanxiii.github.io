@@ -1,0 +1,128 @@
+---
+layout: default
+title: Michigan Bill Tracker
+permalink: /bills/
+sitemap: false
+robots: noindex,nofollow
+body_class: bill-dashboard-page
+bill_dashboard: true
+---
+
+<main class="bill-dashboard" data-bills-source="{{ '/assets/data/bills.json' | relative_url }}">
+  <section class="dashboard-heading" aria-labelledby="dashboard-title">
+    <div>
+      <p class="dashboard-kicker">Michigan Legislature <span aria-hidden="true">/</span> 2025-2026 session</p>
+      <h1 id="dashboard-title">Michigan Bill Tracker</h1>
+      <p class="dashboard-headline" id="dashboard-headline">Loading current public-source status...</p>
+    </div>
+    <div class="dashboard-heading-actions">
+      <p class="checked-date"><span aria-hidden="true"></span> Checked <time id="as-of-date">July 17, 2026</time></p>
+      <button class="secondary-button" id="copy-briefing" type="button">Copy briefing</button>
+    </div>
+  </section>
+
+  <aside class="public-disclaimer" aria-label="Publication disclaimer">
+    <strong>Personal public-source tracker.</strong>
+    <span>Not an official publication or position of the Michigan Department of Treasury or State of Michigan.</span>
+  </aside>
+
+  <dl class="summary-strip" aria-label="Legislative summary">
+    <div>
+      <dt>Tracked bills</dt>
+      <dd id="metric-tracked">--</dd>
+    </div>
+    <div>
+      <dt>Passed a chamber</dt>
+      <dd id="metric-passed">--</dd>
+    </div>
+    <div>
+      <dt>On third reading</dt>
+      <dd id="metric-third-reading">--</dd>
+    </div>
+    <div>
+      <dt>Enacted</dt>
+      <dd id="metric-enacted">--</dd>
+    </div>
+  </dl>
+
+  <section class="tracker-workspace" aria-labelledby="tracked-bills-title">
+    <div class="workspace-toolbar">
+      <div class="view-switcher" role="group" aria-label="Bill view">
+        <button class="view-button is-active" type="button" data-view="all" aria-pressed="true">All bills</button>
+        <button class="view-button" type="button" data-view="attention" aria-pressed="false">Needs attention</button>
+        <button class="view-button" type="button" data-view="kiosk" aria-pressed="false">Kiosk bills</button>
+      </div>
+      <label class="search-control">
+        <span class="visually-hidden">Search bills</span>
+        <input id="bill-search" type="search" placeholder="Search bill, policy, status" autocomplete="off">
+      </label>
+    </div>
+
+    <div class="filter-row">
+      <label>
+        <span>Issue</span>
+        <select id="issue-filter"><option value="">All issues</option></select>
+      </label>
+      <label>
+        <span>Stage</span>
+        <select id="stage-filter"><option value="">All stages</option></select>
+      </label>
+      <label>
+        <span>Attention</span>
+        <select id="attention-filter"><option value="">All levels</option></select>
+      </label>
+      <label>
+        <span>Sort</span>
+        <select id="sort-bills">
+          <option value="attention">Attention</option>
+          <option value="latest">Latest action</option>
+          <option value="bill">Bill number</option>
+        </select>
+      </label>
+      <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
+    </div>
+
+    <div class="results-heading">
+      <div>
+        <h2 id="tracked-bills-title">Tracked bills</h2>
+        <p id="results-count" aria-live="polite">Loading bill records...</p>
+      </div>
+      <a class="source-link" id="legislature-source" href="https://www.legislature.mi.gov/Bills/">Michigan Legislature</a>
+    </div>
+
+    <div class="bill-column-headings" aria-hidden="true">
+      <span>Attention</span>
+      <span>Bill and issue</span>
+      <span>Policy</span>
+      <span>Status</span>
+      <span>Source</span>
+    </div>
+    <div class="bill-list" id="bill-list" aria-busy="true"></div>
+    <p class="empty-state" id="empty-state" hidden>No bills match the current filters.</p>
+  </section>
+
+  <section class="update-band" aria-labelledby="recent-updates-title">
+    <div class="section-heading">
+      <h2 id="recent-updates-title">Recent material updates</h2>
+      <p>Official history changes that affect the tracker summary.</p>
+    </div>
+    <ol class="update-list" id="update-list"></ol>
+  </section>
+
+  <section class="comparison-section" id="kiosk-comparison" aria-labelledby="kiosk-comparison-title">
+    <div class="section-heading">
+      <h2 id="kiosk-comparison-title">Crypto kiosk proposals</h2>
+      <p>Five competing Michigan approaches, from detailed regulation to a felony ban.</p>
+    </div>
+    <div class="comparison-grid" id="comparison-grid"></div>
+  </section>
+
+  <footer class="dashboard-notes">
+    <p><strong>Status rule:</strong> A committee referral or calendar listing is not enactment. Bill histories are checked against official Michigan Legislature records.</p>
+    <p>Last public-source review: <time id="notes-as-of">July 17, 2026</time>.</p>
+  </footer>
+
+  <noscript>
+    <p class="load-error">JavaScript is required to load and filter the bill records.</p>
+  </noscript>
+</main>
