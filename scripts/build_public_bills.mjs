@@ -79,6 +79,7 @@ const bills = source.coreBills.map((bill) => {
     bill: bill.bill,
     issue_group: bill.issueGroup,
     policy: bill.policy,
+    tax_policy_signal: bill.taxPolicySignal,
     tax_fiscal: bill.taxFiscal,
     fiscal_focus: bill.fiscalFocus,
     fiscal_channel: bill.fiscalChannel,

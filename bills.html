@@ -58,7 +58,7 @@ bill_dashboard: true
       <div class="view-switcher" role="group" aria-label="Bill view">
         <button class="view-button is-active" type="button" data-view="all" aria-pressed="true">All bills</button>
         <button class="view-button" type="button" data-view="tax-revenue" aria-pressed="false">Tax &amp; revenue</button>
-        <button class="view-button" type="button" data-view="hearing" aria-pressed="false">Hearing priority</button>
+        <button class="view-button" type="button" data-view="hearing" aria-pressed="false">Fiscal-note queue</button>
         <button class="view-button" type="button" data-view="kiosk" aria-pressed="false">Kiosk bills</button>
       </div>
       <label class="search-control">
@@ -91,7 +91,7 @@ bill_dashboard: true
       <label>
         <span>Sort</span>
         <select id="sort-bills">
-          <option value="priority">Fiscal-note priority</option>
+          <option value="priority">Monitoring priority</option>
           <option value="latest">Latest action</option>
           <option value="bill">Bill number</option>
         </select>
@@ -139,6 +139,7 @@ bill_dashboard: true
 
   <footer class="dashboard-notes">
     <p><strong>Status rule:</strong> A committee referral or calendar listing is not enactment. Bill histories are checked against official Michigan Legislature records.</p>
+    <p><strong>Monitoring rule:</strong> Every crypto bill is reviewed for potential tax-design lessons. A bill enters the fiscal-note queue only when an official committee hearing is scheduled.</p>
     <p><strong>Analysis scope:</strong> Important notes and drafting ambiguities are currently maintained for tax and revenue bills.</p>
     <p>Last public-source review: <time id="notes-as-of">July 17, 2026</time>.</p>
   </footer>

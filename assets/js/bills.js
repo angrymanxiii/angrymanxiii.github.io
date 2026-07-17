@@ -135,6 +135,9 @@
           </p>
         </section>`
       : "";
+    const fiscalNoteStatus = bill.upcoming_hearing
+      ? "Queued - official committee hearing scheduled"
+      : "Monitoring - no official committee hearing scheduled";
 
     detail.innerHTML = `
       <summary>
@@ -157,6 +160,13 @@
       <div class="bill-details">
         ${hearingDetail}
         ${curatedAnalysis}
+        <section class="tax-policy-signal">
+          <div>
+            <h3>Potential tax design relevance</h3>
+            <p>${escapeHtml(bill.tax_policy_signal)}</p>
+          </div>
+          <p class="fiscal-note-state${bill.upcoming_hearing ? " is-queued" : ""}"><strong>Fiscal-note status</strong>${escapeHtml(fiscalNoteStatus)}</p>
+        </section>
         <section class="detail-block">
           <h3>Tax and fiscal relevance</h3>
           <p>${escapeHtml(bill.tax_fiscal)}</p>
@@ -287,7 +297,7 @@
     return [
       `Michigan crypto bill tracker, checked ${formatDate(metadata.as_of)}.`,
       `${summary.tracked} bills tracked; ${summary.tax_revenue} directly affect tax or revenue; ${summary.enacted} enacted; ${summary.passed_chamber} passed a chamber.`,
-      `Fiscal-note hearing priority: ${hearingPriority}.`,
+      `Fiscal-note queue: ${hearingPriority}.`,
       `Tax/revenue watch: ${taxRevenueWatch}.`,
       `Latest update: ${updates[0].bills} - ${updates[0].update}`,
       "Personal public-source tracker; not an official Treasury or State of Michigan publication.",
@@ -382,11 +392,11 @@
     setText("#metric-enacted", data.summary.enacted);
 
     if (data.summary.hearings_scheduled) {
-      setText("#hearing-watch-title", `${data.summary.hearings_scheduled} tracked ${data.summary.hearings_scheduled === 1 ? "bill has" : "bills have"} an upcoming hearing.`);
-      setText("#hearing-watch-detail", "These are the first fiscal-note priority.");
+      setText("#hearing-watch-title", `${data.summary.hearings_scheduled} tracked ${data.summary.hearings_scheduled === 1 ? "bill is" : "bills are"} in the fiscal-note queue.`);
+      setText("#hearing-watch-detail", "Each has an upcoming hearing on the official committee schedule.");
     } else {
-      setText("#hearing-watch-title", "No tracked bill has an upcoming committee hearing.");
-      setText("#hearing-watch-detail", `Official schedule checked ${formatDate(data.metadata.hearing_schedule_checked)}.`);
+      setText("#hearing-watch-title", "Fiscal-note queue is empty.");
+      setText("#hearing-watch-detail", `No tracked bill had an upcoming official hearing when checked ${formatDate(data.metadata.hearing_schedule_checked)}.`);
     }
 
     const sourceLink = document.querySelector("#legislature-source");

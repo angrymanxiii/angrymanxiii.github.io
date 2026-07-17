@@ -588,6 +588,50 @@ select {
   margin-top: 0.38rem;
 }
 
+.tax-policy-signal {
+  align-items: start;
+  border-bottom: 1px solid var(--tracker-line);
+  display: grid;
+  gap: 1.25rem;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  padding-bottom: 1rem;
+}
+
+.tax-policy-signal h3 {
+  color: var(--tracker-muted);
+  font-size: 0.7rem;
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+}
+
+.tax-policy-signal > div > p {
+  font-size: 0.82rem;
+  line-height: 1.48;
+  margin: 0;
+}
+
+.fiscal-note-state {
+  border-left: 3px solid var(--tracker-line);
+  color: var(--tracker-muted);
+  display: grid;
+  font-size: 0.76rem;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0.4rem 0 0.4rem 0.65rem;
+}
+
+.fiscal-note-state strong {
+  color: var(--tracker-ink);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.fiscal-note-state.is-queued {
+  border-left-color: var(--tracker-green);
+  color: var(--tracker-green);
+}
+
 .hearing-detail {
   background: var(--tracker-green-soft);
   border-left: 3px solid var(--tracker-green);
@@ -874,6 +918,10 @@ select {
   }
 
   .curated-analysis {
+    grid-template-columns: 1fr;
+  }
+
+  .tax-policy-signal {
     grid-template-columns: 1fr;
   }
 
