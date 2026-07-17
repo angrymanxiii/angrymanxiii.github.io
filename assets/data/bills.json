@@ -37,8 +37,13 @@
       "sponsor": "Bryan Posthumus",
       "related_bills": "HB 5882",
       "next_trigger": "Committee hearing, substitute, or report to the House floor.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4085",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4085-XT4KCGNL.pdf",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-4085.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4085-XT4KCGNL.pdf",
+      "summary_label": "HFA analysis",
       "upcoming_hearing": null
     },
     {
@@ -58,8 +63,13 @@
       "sponsor": "Alabas Farhat",
       "related_bills": "HB 4087",
       "next_trigger": "Committee hearing, fiscal analysis, or substitute addressing Treasury capitalization and custody.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4086",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-4086.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-4086.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4086",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -79,8 +89,21 @@
       "sponsor": "Bryan Posthumus",
       "related_bills": "HB 4086",
       "next_trigger": "Committee action or amendment to the 10% cap, eligible funds, custody, or lending authority.",
+      "important_notes": [
+        "The authority is permissive, not mandatory, and the 10% cap applies separately to available General Fund and Budget Stabilization Fund balances.",
+        "Crypto paid as taxes or fees would be transferred to the General Fund, with any legally designated fund reimbursed in dollars.",
+        "Holdings could be kept through state custody, a qualified custodian, or a registered exchange-traded product, and could be lent under Treasurer rules."
+      ],
+      "ambiguities": [
+        "The bill does not define available funds or specify valuation and rebalancing timing for the 10% limits.",
+        "The conversion date and exchange rate used to reimburse a designated fund after a crypto payment are not specified.",
+        "The standard allowing lending without increasing financial risk has no statutory collateral, counterparty, concentration, or loss-allocation rule."
+      ],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4087",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4087-BMQJGDZ3.pdf",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-4087.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4087-BMQJGDZ3.pdf",
+      "summary_label": "HFA analysis",
       "upcoming_hearing": null
     },
     {
@@ -100,8 +123,13 @@
       "sponsor": "Bill Schuette",
       "related_bills": "HB 4087",
       "next_trigger": "House passage, floor amendment, or removal from the calendar.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4510",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4510-8C5ZT6JP.pdf",
+      "bill_text_url": "https://www.legislature.mi.gov/Home/GetObject?objectName=2025-HCVBH-4510-0O4012.pdf",
+      "bill_text_label": "H-2 substitute as amended",
+      "summary_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4510-8C5ZT6JP.pdf",
+      "summary_label": "HFA analysis",
       "upcoming_hearing": null
     },
     {
@@ -121,8 +149,21 @@
       "sponsor": "Bryan Posthumus",
       "related_bills": "HB 5132",
       "next_trigger": "House passage or amendment to tax preemption, staking, CBDC, or liability provisions.",
+      "important_notes": [
+        "The bill does not exempt an underlying sale or transfer from ordinary tax; it bars an additional tax, withholding, assessment, or charge imposed solely because digital assets are used.",
+        "It preempts state and local restrictions on holding digital assets, operating nodes, transferring assets, and participating in staking.",
+        "It also restricts state-agency support for a federal central bank digital currency and creates a civil-liability protection for specified network activities."
+      ],
+      "ambiguities": [
+        "The boundary between a prohibited crypto-only charge and a generally applicable licensing, compliance, or service fee is not specified.",
+        "The civil-liability protection may be unclear for mixed-service providers or claims not based solely on validating a transaction.",
+        "The scope of advocating for or supporting federal central bank digital currency testing or adoption is undefined."
+      ],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4511",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4511-J29ZLP4Y.pdf",
+      "bill_text_url": "https://www.legislature.mi.gov/Home/GetObject?objectName=2025-HCVBH-4511-0O3312.pdf",
+      "bill_text_label": "H-1 substitute",
+      "summary_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4511-J29ZLP4Y.pdf",
+      "summary_label": "HFA analysis",
       "upcoming_hearing": null
     },
     {
@@ -142,8 +183,13 @@
       "sponsor": "Mike McFall",
       "related_bills": "HB 4513 (tie-barred)",
       "next_trigger": "Committee action, program funding changes, or movement of the tie-barred tax deduction.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4512",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4512-0D9Y72FK.pdf",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-4512.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4512-0D9Y72FK.pdf",
+      "summary_label": "HFA analysis",
       "upcoming_hearing": null
     },
     {
@@ -163,8 +209,21 @@
       "sponsor": "Mike McFall",
       "related_bills": "HB 4512 (tie-barred)",
       "next_trigger": "Committee action or amendment to eligible income, taxes, duration, or tie-bar.",
+      "important_notes": [
+        "The deduction applies across the individual income tax, corporate income tax, and elective flow-through entity business income tax.",
+        "Eligibility is limited to bitcoin mining under the abandoned-well program created by tie-barred HB 4512.",
+        "HFA identifies an indeterminate revenue loss that depends heavily on whether the mining activity would occur without the deduction."
+      ],
+      "ambiguities": [
+        "The bill provides no allocation method for income attributable to qualifying mining when a taxpayer has mixed sites or activities.",
+        "The introduced language does not specify a first eligible tax year, sunset, or statewide cap.",
+        "Treatment of related expenses, losses, asset-sale timing, and pass-through member allocation is not specifically addressed."
+      ],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4513",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4512-0D9Y72FK.pdf",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-4513.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4512-0D9Y72FK.pdf",
+      "summary_label": "HFA analysis",
       "upcoming_hearing": null
     },
     {
@@ -184,8 +243,21 @@
       "sponsor": "James DeSana",
       "related_bills": "HB 4511",
       "next_trigger": "Finance hearing or amendment to the $200 threshold, covered taxes, reporting, or treble damages.",
+      "important_notes": [
+        "The tax and tax-reporting prohibition applies to covered transactions below $200 and reaches state and local governmental entities.",
+        "The bill separately protects lawful use of convertible virtual currency, self-hosted wallets, and use of virtual currency as collateral.",
+        "A prevailing plaintiff would be entitled to three times actual damages, creating potential governmental litigation exposure."
+      ],
+      "ambiguities": [
+        "Transaction is undefined, leaving the valuation time, aggregation of related transfers, and treatment of multiple sub-$200 payments unclear.",
+        "The phrase impose a tax on a transaction does not identify which state or local taxes are displaced or how income and gain taxes would be treated.",
+        "The measure of actual loss for treble damages and the provision's interaction with governmental immunity are not specified."
+      ],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5132",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-5132.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-5132.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5132",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -205,8 +277,13 @@
       "sponsor": "Joseph Aragona",
       "related_bills": "HB 5470 (tie-barred)",
       "next_trigger": "Committee action or consolidation with later kiosk regulation and ban packages.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5469",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5469-B8WMLQD1.pdf",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5469.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5469-B8WMLQD1.pdf",
+      "summary_label": "HFA analysis",
       "upcoming_hearing": null
     },
     {
@@ -226,8 +303,13 @@
       "sponsor": "Mike McFall",
       "related_bills": "HB 5469 (tie-barred)",
       "next_trigger": "Committee action or interaction with the HB 5544 money-transmitter rewrite.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5470",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5469-B8WMLQD1.pdf",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5470.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5469-B8WMLQD1.pdf",
+      "summary_label": "HFA analysis",
       "upcoming_hearing": null
     },
     {
@@ -247,8 +329,13 @@
       "sponsor": "Sarah Lightner",
       "related_bills": "HB 5545-HB 5550; SB 835",
       "next_trigger": "Senate committee hearing, substitute, report, or substitution for SB 835.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5544",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5544-MXQS93C5.pdf",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billengrossed/House/htm/2026-HEBH-5544.htm",
+      "bill_text_label": "As Passed by the House",
+      "summary_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5544-MXQS93C5.pdf",
+      "summary_label": "HFA analysis",
       "upcoming_hearing": null
     },
     {
@@ -268,8 +355,13 @@
       "sponsor": "Rosemary Bayer",
       "related_bills": "HB 5544-HB 5550",
       "next_trigger": "Committee substitution, merger with HB 5544, or Senate report.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0835",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2026-SIB-0835.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2026-SIB-0835.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0835",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -289,8 +381,13 @@
       "sponsor": "Matt Maddock",
       "related_bills": "None identified",
       "next_trigger": "Committee hearing, fiscal analysis, or amendment addressing conversion timing and tax withholding.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5670",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5670.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5670.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5670",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -310,8 +407,13 @@
       "sponsor": "Reggie Miller",
       "related_bills": "HB 5881-HB 5882",
       "next_trigger": "Committee action or changes to thresholds, fees, financial security, or mining coverage.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5777",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5777.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5777.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5777",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -331,8 +433,13 @@
       "sponsor": "Reggie Miller",
       "related_bills": "HB 5881 (tie-barred); HB 5777",
       "next_trigger": "Committee action or amendment to moratorium duration, disclosure, or local authority.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5882",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5882.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5882.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5882",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -352,8 +459,13 @@
       "sponsor": "Matt Koleszar",
       "related_bills": "HB 5987 (tie-barred); SB 980",
       "next_trigger": "Committee action or consolidation with other kiosk-ban and regulation bills.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5986",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5986.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5986.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5986",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -373,8 +485,13 @@
       "sponsor": "Matt Koleszar",
       "related_bills": "HB 5986 (tie-barred)",
       "next_trigger": "Movement of HB 5986 or changes to lottery-license sanctions.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5987",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5987.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5987.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5987",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -394,8 +511,13 @@
       "sponsor": "Jeff Irwin",
       "related_bills": "HB 5986-HB 5987",
       "next_trigger": "Committee hearing or selection of this bill over competing House kiosk approaches.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0980",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2026-SIB-0980.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2026-SIB-0980.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0980",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -415,8 +537,13 @@
       "sponsor": "Mark Tisdel",
       "related_bills": "HB 6078 (tie-barred)",
       "next_trigger": "Committee action or reconciliation with civil-ban and regulatory kiosk packages.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6077",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6077.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6077.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6077",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -436,8 +563,13 @@
       "sponsor": "Curtis VanderWall",
       "related_bills": "HB 6077 (tie-barred)",
       "next_trigger": "Movement or amendment of HB 6077.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6078",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6078.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6078.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6078",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -457,8 +589,13 @@
       "sponsor": "Reggie Miller",
       "related_bills": "HB 6223 (tie-barred)",
       "next_trigger": "Committee hearing, substitute, HFA analysis, or consolidation with the kiosk-ban bills.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6222",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6222.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6222.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6222",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     },
     {
@@ -478,8 +615,13 @@
       "sponsor": "Veronica Paiz",
       "related_bills": "HB 6222 (tie-barred)",
       "next_trigger": "Movement or amendment of HB 6222 and clarification of MCPA remedies.",
+      "important_notes": [],
+      "ambiguities": [],
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6223",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6223.htm",
+      "bill_text_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6223.htm",
+      "bill_text_label": "Introduced Bill",
+      "summary_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6223",
+      "summary_label": "Official bill page",
       "upcoming_hearing": null
     }
   ],

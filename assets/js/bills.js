@@ -96,16 +96,33 @@
     });
   }
 
+  function renderBulletList(items) {
+    return `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+  }
+
   function renderBill(bill) {
     const detail = document.createElement("details");
     detail.className = "bill-item";
     detail.dataset.bill = bill.bill;
 
-    const analysisLabel = bill.analysis_url.includes("billanalysis")
-      ? "Public analysis"
-      : "Introduced text";
     const hearingPill = bill.upcoming_hearing
       ? '<span class="priority-pill hearing-pill">Hearing scheduled</span>'
+      : "";
+    const curatedAnalysis = bill.important_notes.length || bill.ambiguities.length
+      ? `<section class="curated-analysis" aria-label="Tax and revenue review">
+          <div>
+            <h3>Policy summary</h3>
+            <p>${escapeHtml(bill.policy)}</p>
+          </div>
+          <div>
+            <h3>Important notes</h3>
+            ${renderBulletList(bill.important_notes)}
+          </div>
+          <div>
+            <h3>Open questions and ambiguities</h3>
+            ${renderBulletList(bill.ambiguities)}
+          </div>
+        </section>`
       : "";
     const fiscalPill = bill.fiscal_focus === "Tax / revenue"
       ? '<span class="priority-pill revenue-pill">Tax / revenue</span>'
@@ -139,6 +156,7 @@
       </summary>
       <div class="bill-details">
         ${hearingDetail}
+        ${curatedAnalysis}
         <section class="detail-block">
           <h3>Tax and fiscal relevance</h3>
           <p>${escapeHtml(bill.tax_fiscal)}</p>
@@ -155,7 +173,11 @@
         <div class="detail-meta">
           <span><strong>Sponsor:</strong> ${escapeHtml(bill.sponsor)}</span>
           <span><strong>Related:</strong> ${escapeHtml(bill.related_bills)}</span>
-          <a class="analysis-link" href="${escapeHtml(officialUrl(bill.analysis_url))}">${analysisLabel}</a>
+          <nav class="bill-source-links" aria-label="${escapeHtml(bill.bill)} official sources">
+            <a href="${escapeHtml(officialUrl(bill.bill_text_url))}"><strong>Bill text</strong><small>${escapeHtml(bill.bill_text_label)}</small></a>
+            <a href="${escapeHtml(officialUrl(bill.summary_url))}"><strong>Bill summary</strong><small>${escapeHtml(bill.summary_label)}</small></a>
+            <a href="${escapeHtml(officialUrl(bill.official_url))}"><strong>Bill history</strong><small>Michigan Legislature</small></a>
+          </nav>
         </div>
       </div>`;
 
