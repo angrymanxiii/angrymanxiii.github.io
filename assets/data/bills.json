@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "title": "Michigan Bill Tracker",
+    "title": "Michigan Tax Policy Tracker",
     "jurisdiction": "Michigan",
     "session": "2025-2026",
     "as_of": "2026-07-17",
-    "headline": "No tracked bill is enacted. One has passed the House; two are on House third reading.",
+    "headline": "Select a tax area to view related bills, fiscal-note priorities, and the policy landscape.",
     "disclaimer": "Personal public-source tracker. Not an official publication or position of the Michigan Department of Treasury or State of Michigan.",
     "source_label": "Michigan Legislature",
     "source_url": "https://www.legislature.mi.gov/Bills/",
@@ -19,9 +19,70 @@
     "third_reading": 2,
     "enacted": 0
   },
+  "tracker_areas": [
+    {
+      "id": "crypto-digital-assets",
+      "label": "Crypto & digital assets",
+      "headline": "No tracked bill is enacted. One has passed the House; two are on House third reading.",
+      "landscape_title": "Crypto & digital-assets policy landscape",
+      "landscape_description": "The 22 tracked bills organized by what they govern and what they can teach us about potential tax design.",
+      "monitoring_rule": "Every crypto bill is reviewed for potential tax-design lessons. A bill enters the fiscal-note queue only when an official committee hearing is scheduled.",
+      "summary": {
+        "tracked": 22,
+        "tax_revenue": 4,
+        "hearings_scheduled": 0,
+        "passed_chamber": 1,
+        "third_reading": 2,
+        "enacted": 0
+      },
+      "policy_landscape": [
+        {
+          "area": "Tax treatment and transaction rules",
+          "bill_count": 3,
+          "bills": "HB 4511, HB 4513, HB 5132",
+          "current_picture": "Pending proposals address tax neutrality for digital-asset payments, a mining-income deduction, and a sub-$200 transaction and reporting exemption.",
+          "status": "HB 4511 is on House third reading; HB 4513 and HB 5132 remain in House committees.",
+          "tax_design_lens": "Define whether the policy is neutral treatment, a targeted preference, or de minimis relief, then specify valuation, attribution, aggregation, and reporting rules."
+        },
+        {
+          "area": "State assets, payments, and payroll",
+          "bill_count": 4,
+          "bills": "HB 4086, HB 4087, HB 4510, HB 5670",
+          "current_picture": "Proposals cover a state-backed digital currency, crypto-paid taxes and fees, state and retirement-fund investment, and a digital-currency wage option.",
+          "status": "HB 4510 is on House third reading; the other three remain in House committees.",
+          "tax_design_lens": "Resolve asset eligibility, valuation time, conversion, custody, withholding, settlement, and allocation of receipts among state funds."
+        },
+        {
+          "area": "Mining, siting, and data centers",
+          "bill_count": 4,
+          "bills": "HB 4085, HB 4512, HB 5777, HB 5882",
+          "current_picture": "The bills address industrial zoning, abandoned-well mining, large-facility registration and financial security, and limits on local moratoria.",
+          "status": "All four remain in House committees.",
+          "tax_design_lens": "Facility thresholds, qualifying activity, nexus, incentives, registration fees, environmental obligations, and state-local authority would shape any mining levy."
+        },
+        {
+          "area": "Money transmission and custody",
+          "bill_count": 2,
+          "bills": "HB 5544, SB 835",
+          "current_picture": "Competing modernization bills define when virtual-currency exchange, transfer, or custody falls inside or outside money-transmitter regulation.",
+          "status": "HB 5544 passed the House and is in a Senate committee; SB 835 remains in a Senate committee.",
+          "tax_design_lens": "A tax registration or third-party reporting system cannot assume every relevant crypto intermediary is licensed as a money transmitter."
+        },
+        {
+          "area": "Retail crypto ATMs and consumer protection",
+          "bill_count": 9,
+          "bills": "HB 5469, HB 5470, HB 5986, HB 5987, SB 980, HB 6077, HB 6078, HB 6222, HB 6223",
+          "current_picture": "Michigan proposals range from licensing and anti-fraud controls to civil or felony bans, with the newest package using transaction caps, holds, warnings, receipts, and records.",
+          "status": "All nine remain in House or Senate committees.",
+          "tax_design_lens": "Operator and premises responsibility, transaction records, thresholds, aggregation, and enforcement are useful design inputs; fines are not a dependable tax base."
+        }
+      ]
+    }
+  ],
   "bills": [
     {
       "id": "2025-HB-4085",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Monitor",
       "bill": "HB 4085",
@@ -49,6 +110,7 @@
     },
     {
       "id": "2025-HB-4086",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Policy watch",
       "bill": "HB 4086",
@@ -76,6 +138,7 @@
     },
     {
       "id": "2025-HB-4087",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Policy watch",
       "bill": "HB 4087",
@@ -111,6 +174,7 @@
     },
     {
       "id": "2025-HB-4510",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Floor watch",
       "bill": "HB 4510",
@@ -138,6 +202,7 @@
     },
     {
       "id": "2025-HB-4511",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Floor watch",
       "bill": "HB 4511",
@@ -173,6 +238,7 @@
     },
     {
       "id": "2025-HB-4512",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Policy watch",
       "bill": "HB 4512",
@@ -200,6 +266,7 @@
     },
     {
       "id": "2025-HB-4513",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Tax watch",
       "bill": "HB 4513",
@@ -235,6 +302,7 @@
     },
     {
       "id": "2025-HB-5132",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Tax watch",
       "bill": "HB 5132",
@@ -270,6 +338,7 @@
     },
     {
       "id": "2026-HB-5469",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Monitor",
       "bill": "HB 5469",
@@ -297,6 +366,7 @@
     },
     {
       "id": "2026-HB-5470",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Monitor",
       "bill": "HB 5470",
@@ -324,6 +394,7 @@
     },
     {
       "id": "2026-HB-5544",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Escalate",
       "bill": "HB 5544",
@@ -351,6 +422,7 @@
     },
     {
       "id": "2026-SB-0835",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Monitor",
       "bill": "SB 835",
@@ -378,6 +450,7 @@
     },
     {
       "id": "2026-HB-5670",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Policy watch",
       "bill": "HB 5670",
@@ -405,6 +478,7 @@
     },
     {
       "id": "2026-HB-5777",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Policy watch",
       "bill": "HB 5777",
@@ -432,6 +506,7 @@
     },
     {
       "id": "2026-HB-5882",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Monitor",
       "bill": "HB 5882",
@@ -459,6 +534,7 @@
     },
     {
       "id": "2026-HB-5986",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Monitor",
       "bill": "HB 5986",
@@ -486,6 +562,7 @@
     },
     {
       "id": "2026-HB-5987",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Monitor",
       "bill": "HB 5987",
@@ -513,6 +590,7 @@
     },
     {
       "id": "2026-SB-0980",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Monitor",
       "bill": "SB 980",
@@ -540,6 +618,7 @@
     },
     {
       "id": "2026-HB-6077",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Monitor",
       "bill": "HB 6077",
@@ -567,6 +646,7 @@
     },
     {
       "id": "2026-HB-6078",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Monitor",
       "bill": "HB 6078",
@@ -594,6 +674,7 @@
     },
     {
       "id": "2026-HB-6222",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Policy watch",
       "bill": "HB 6222",
@@ -621,6 +702,7 @@
     },
     {
       "id": "2026-HB-6223",
+      "tracker_area": "crypto-digital-assets",
       "area": "Crypto and digital assets",
       "attention": "Policy watch",
       "bill": "HB 6223",
@@ -647,73 +729,36 @@
       "upcoming_hearing": null
     }
   ],
-  "policy_landscape": [
-    {
-      "area": "Tax treatment and transaction rules",
-      "bill_count": 3,
-      "bills": "HB 4511, HB 4513, HB 5132",
-      "current_picture": "Pending proposals address tax neutrality for digital-asset payments, a mining-income deduction, and a sub-$200 transaction and reporting exemption.",
-      "status": "HB 4511 is on House third reading; HB 4513 and HB 5132 remain in House committees.",
-      "tax_design_lens": "Define whether the policy is neutral treatment, a targeted preference, or de minimis relief, then specify valuation, attribution, aggregation, and reporting rules."
-    },
-    {
-      "area": "State assets, payments, and payroll",
-      "bill_count": 4,
-      "bills": "HB 4086, HB 4087, HB 4510, HB 5670",
-      "current_picture": "Proposals cover a state-backed digital currency, crypto-paid taxes and fees, state and retirement-fund investment, and a digital-currency wage option.",
-      "status": "HB 4510 is on House third reading; the other three remain in House committees.",
-      "tax_design_lens": "Resolve asset eligibility, valuation time, conversion, custody, withholding, settlement, and allocation of receipts among state funds."
-    },
-    {
-      "area": "Mining, siting, and data centers",
-      "bill_count": 4,
-      "bills": "HB 4085, HB 4512, HB 5777, HB 5882",
-      "current_picture": "The bills address industrial zoning, abandoned-well mining, large-facility registration and financial security, and limits on local moratoria.",
-      "status": "All four remain in House committees.",
-      "tax_design_lens": "Facility thresholds, qualifying activity, nexus, incentives, registration fees, environmental obligations, and state-local authority would shape any mining levy."
-    },
-    {
-      "area": "Money transmission and custody",
-      "bill_count": 2,
-      "bills": "HB 5544, SB 835",
-      "current_picture": "Competing modernization bills define when virtual-currency exchange, transfer, or custody falls inside or outside money-transmitter regulation.",
-      "status": "HB 5544 passed the House and is in a Senate committee; SB 835 remains in a Senate committee.",
-      "tax_design_lens": "A tax registration or third-party reporting system cannot assume every relevant crypto intermediary is licensed as a money transmitter."
-    },
-    {
-      "area": "Retail crypto ATMs and consumer protection",
-      "bill_count": 9,
-      "bills": "HB 5469, HB 5470, HB 5986, HB 5987, SB 980, HB 6077, HB 6078, HB 6222, HB 6223",
-      "current_picture": "Michigan proposals range from licensing and anti-fraud controls to civil or felony bans, with the newest package using transaction caps, holds, warnings, receipts, and records.",
-      "status": "All nine remain in House or Senate committees.",
-      "tax_design_lens": "Operator and premises responsibility, transaction records, thresholds, aggregation, and enforcement are useful design inputs; fines are not a dependable tax base."
-    }
-  ],
   "key_updates": [
     {
       "date": "2026-07-16",
       "bills": "HB 6222 / HB 6223",
-      "update": "New targeted crypto-ATM regulation package introduced; committee only, not a tax and not enacted."
+      "update": "New targeted crypto-ATM regulation package introduced; committee only, not a tax and not enacted.",
+      "tracker_area": "crypto-digital-assets"
     },
     {
       "date": "2026-07-01",
       "bills": "HB 5544",
-      "update": "Sent to Senate committee after House passage; this is the only core tracked bill to pass either chamber."
+      "update": "Sent to Senate committee after House passage; this is the only core tracked bill to pass either chamber.",
+      "tracker_area": "crypto-digital-assets"
     },
     {
       "date": "2026-06-11",
       "bills": "HB 6077 / HB 6078",
-      "update": "Felony crypto-ATM ban package introduced and referred to House Regulatory Reform."
+      "update": "Felony crypto-ATM ban package introduced and referred to House Regulatory Reform.",
+      "tracker_area": "crypto-digital-assets"
     },
     {
       "date": "2026-05-19",
       "bills": "HB 5986 / HB 5987 and SB 980",
-      "update": "Civil crypto-ATM ban alternatives introduced in both chambers."
+      "update": "Civil crypto-ATM ban alternatives introduced in both chambers.",
+      "tracker_area": "crypto-digital-assets"
     },
     {
       "date": "2026-03-11",
       "bills": "HB 4510 / HB 4511",
-      "update": "Moved to House third reading; no later House passage is shown in official histories."
+      "update": "Moved to House third reading; no later House passage is shown in official histories.",
+      "tracker_area": "crypto-digital-assets"
     }
   ]
 }

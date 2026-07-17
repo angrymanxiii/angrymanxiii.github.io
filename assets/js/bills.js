@@ -9,7 +9,7 @@
     empty: document.querySelector("#empty-state"),
     count: document.querySelector("#results-count"),
     search: document.querySelector("#bill-search"),
-    area: document.querySelector("#area-filter"),
+    trackerArea: document.querySelector("#tracker-area"),
     issue: document.querySelector("#issue-filter"),
     stage: document.querySelector("#stage-filter"),
     fiscalFocus: document.querySelector("#fiscal-focus-filter"),
@@ -19,13 +19,17 @@
     copy: document.querySelector("#copy-briefing"),
     landscape: document.querySelector("#landscape-list"),
     updates: document.querySelector("#update-list"),
+    landscapeTitle: document.querySelector("#policy-landscape-title"),
+    landscapeDescription: document.querySelector("#policy-landscape-description"),
+    updatesDescription: document.querySelector("#recent-updates-description"),
+    monitoringRule: document.querySelector("#monitoring-rule"),
   };
 
   const state = {
     data: null,
     view: "all",
     query: "",
-    area: "",
+    trackerArea: "",
     issue: "",
     stage: "",
     fiscalFocus: "",
@@ -87,13 +91,47 @@
     if (element) element.textContent = value;
   }
 
-  function populateSelect(select, values) {
+  function replaceSelectOptions(select, placeholder, values) {
+    const placeholderOption = document.createElement("option");
+    placeholderOption.value = "";
+    placeholderOption.textContent = placeholder;
+    select.replaceChildren(placeholderOption);
     [...new Set(values)].sort().forEach((value) => {
       const option = document.createElement("option");
       option.value = value;
       option.textContent = value;
       select.append(option);
     });
+  }
+
+  function trackerAreas() {
+    if (Array.isArray(state.data.tracker_areas) && state.data.tracker_areas.length) {
+      return state.data.tracker_areas;
+    }
+    return [{
+      id: "all-tracked-bills",
+      label: "All tracked bills",
+      headline: state.data.metadata.headline,
+      landscape_title: "Policy landscape",
+      landscape_description: "Tracked bills organized by what they govern and what they can teach us about potential tax design.",
+      monitoring_rule: "Every tracked bill is reviewed for potential tax-design lessons. A bill enters the fiscal-note queue only when an official committee hearing is scheduled.",
+      summary: state.data.summary,
+      policy_landscape: state.data.policy_landscape ?? [],
+    }];
+  }
+
+  function activeTrackerArea() {
+    return trackerAreas().find((area) => area.id === state.trackerArea) ?? trackerAreas()[0];
+  }
+
+  function activeAreaBills() {
+    const activeArea = activeTrackerArea();
+    if (activeArea.id === "all-tracked-bills") return state.data.bills;
+    return state.data.bills.filter((bill) => bill.tracker_area === activeArea.id);
+  }
+
+  function activeAreaUpdates() {
+    return state.data.key_updates.filter((update) => !update.tracker_area || update.tracker_area === state.trackerArea);
   }
 
   function renderBulletList(items) {
@@ -201,10 +239,9 @@
 
   function visibleBills() {
     const query = state.query.trim().toLowerCase();
-    const filtered = state.data.bills.filter((bill) => {
+    const filtered = activeAreaBills().filter((bill) => {
       if (state.view === "tax-revenue" && bill.fiscal_focus !== "Tax / revenue") return false;
       if (state.view === "hearing" && !bill.upcoming_hearing) return false;
-      if (state.area && bill.area !== state.area) return false;
       if (state.issue && bill.issue_group !== state.issue) return false;
       if (state.stage && bill.stage !== state.stage) return false;
       if (state.fiscalFocus && bill.fiscal_focus !== state.fiscalFocus) return false;
@@ -247,7 +284,7 @@
     elements.list.replaceChildren(...bills.map(renderBill));
     elements.list.setAttribute("aria-busy", "false");
     elements.empty.hidden = bills.length !== 0;
-    elements.count.textContent = `${bills.length} of ${state.data.bills.length} bills shown`;
+    elements.count.textContent = `${bills.length} of ${activeAreaBills().length} bills shown`;
   }
 
   function renderUpdates(updates) {
@@ -290,7 +327,11 @@
   }
 
   function briefingText() {
-    const { metadata, summary, bills, key_updates: updates } = state.data;
+    const { metadata } = state.data;
+    const activeArea = activeTrackerArea();
+    const summary = activeArea.summary;
+    const bills = activeAreaBills();
+    const updates = activeAreaUpdates();
     const taxRevenueWatch = bills
       .filter((bill) => bill.fiscal_focus === "Tax / revenue")
       .sort((a, b) => Number(Boolean(b.upcoming_hearing)) - Number(Boolean(a.upcoming_hearing)) || (attentionRank[a.attention] ?? 99) - (attentionRank[b.attention] ?? 99))
@@ -300,11 +341,11 @@
       ? bills.filter((bill) => bill.upcoming_hearing).map((bill) => `${bill.bill} (${formatDate(bill.upcoming_hearing.date)})`).join("; ")
       : `None scheduled as of ${formatDate(metadata.hearing_schedule_checked)}`;
     return [
-      `Michigan crypto bill tracker, checked ${formatDate(metadata.as_of)}.`,
+      `Michigan Tax Policy Tracker - ${activeArea.label}, checked ${formatDate(metadata.as_of)}.`,
       `${summary.tracked} bills tracked; ${summary.tax_revenue} directly affect tax or revenue; ${summary.enacted} enacted; ${summary.passed_chamber} passed a chamber.`,
       `Fiscal-note queue: ${hearingPriority}.`,
       `Tax/revenue watch: ${taxRevenueWatch}.`,
-      `Latest update: ${updates[0].bills} - ${updates[0].update}`,
+      updates.length ? `Latest update: ${updates[0].bills} - ${updates[0].update}` : "No material updates are recorded for this tax area.",
       "Personal public-source tracker; not an official Treasury or State of Michigan publication.",
     ].join("\n");
   }
@@ -323,14 +364,12 @@
 
   function resetFilters() {
     state.query = "";
-    state.area = "";
     state.issue = "";
     state.stage = "";
     state.fiscalFocus = "";
     state.attention = "";
     state.sort = "priority";
     elements.search.value = "";
-    elements.area.value = "";
     elements.issue.value = "";
     elements.stage.value = "";
     elements.fiscalFocus.value = "";
@@ -339,14 +378,49 @@
     renderBills();
   }
 
+  function renderAreaSummary() {
+    const activeArea = activeTrackerArea();
+    const summary = activeArea.summary;
+    setText("#dashboard-headline", activeArea.headline);
+    setText("#metric-tax-revenue", summary.tax_revenue);
+    setText("#metric-hearings", summary.hearings_scheduled);
+    setText("#metric-passed", summary.passed_chamber);
+    setText("#metric-enacted", summary.enacted);
+    elements.landscapeTitle.textContent = activeArea.landscape_title;
+    elements.landscapeDescription.textContent = activeArea.landscape_description;
+    elements.updatesDescription.textContent = `Official history changes affecting ${activeArea.label}.`;
+    elements.monitoringRule.textContent = activeArea.monitoring_rule;
+
+    if (summary.hearings_scheduled) {
+      setText("#hearing-watch-title", `${summary.hearings_scheduled} tracked ${summary.hearings_scheduled === 1 ? "bill is" : "bills are"} in the fiscal-note queue.`);
+      setText("#hearing-watch-detail", "Each has an upcoming hearing on the official committee schedule.");
+    } else {
+      setText("#hearing-watch-title", "Fiscal-note queue is empty.");
+      setText("#hearing-watch-detail", `No tracked bill had an upcoming official hearing when checked ${formatDate(state.data.metadata.hearing_schedule_checked)}.`);
+    }
+
+    renderUpdates(activeAreaUpdates());
+    renderLandscape(activeArea.policy_landscape);
+  }
+
+  function refreshFiltersForArea() {
+    const bills = activeAreaBills();
+    replaceSelectOptions(elements.issue, "All issues", bills.map((bill) => bill.issue_group));
+    replaceSelectOptions(elements.stage, "All stages", bills.map((bill) => bill.stage));
+    replaceSelectOptions(elements.fiscalFocus, "All fiscal levels", bills.map((bill) => bill.fiscal_focus));
+    replaceSelectOptions(elements.attention, "All levels", bills.map((bill) => bill.attention));
+  }
+
   function bindControls() {
     elements.search.addEventListener("input", () => {
       state.query = elements.search.value;
       renderBills();
     });
-    elements.area.addEventListener("change", () => {
-      state.area = elements.area.value;
-      renderBills();
+    elements.trackerArea.addEventListener("change", () => {
+      state.trackerArea = elements.trackerArea.value;
+      resetFilters();
+      refreshFiltersForArea();
+      renderAreaSummary();
     });
     elements.issue.addEventListener("change", () => {
       state.issue = elements.issue.value;
@@ -386,23 +460,19 @@
 
   function initialize(data) {
     state.data = data;
-    setText("#dashboard-headline", data.metadata.headline);
     setText("#as-of-date", formatDate(data.metadata.as_of));
     setText("#notes-as-of", formatDate(data.metadata.as_of));
     document.querySelector("#as-of-date").dateTime = data.metadata.as_of;
     document.querySelector("#notes-as-of").dateTime = data.metadata.as_of;
-    setText("#metric-tax-revenue", data.summary.tax_revenue);
-    setText("#metric-hearings", data.summary.hearings_scheduled);
-    setText("#metric-passed", data.summary.passed_chamber);
-    setText("#metric-enacted", data.summary.enacted);
-
-    if (data.summary.hearings_scheduled) {
-      setText("#hearing-watch-title", `${data.summary.hearings_scheduled} tracked ${data.summary.hearings_scheduled === 1 ? "bill is" : "bills are"} in the fiscal-note queue.`);
-      setText("#hearing-watch-detail", "Each has an upcoming hearing on the official committee schedule.");
-    } else {
-      setText("#hearing-watch-title", "Fiscal-note queue is empty.");
-      setText("#hearing-watch-detail", `No tracked bill had an upcoming official hearing when checked ${formatDate(data.metadata.hearing_schedule_checked)}.`);
-    }
+    const areas = trackerAreas();
+    areas.forEach((area) => {
+      const option = document.createElement("option");
+      option.value = area.id;
+      option.textContent = area.label;
+      elements.trackerArea.append(option);
+    });
+    state.trackerArea = areas[0].id;
+    elements.trackerArea.value = state.trackerArea;
 
     const sourceLink = document.querySelector("#legislature-source");
     sourceLink.textContent = data.metadata.source_label;
@@ -417,14 +487,9 @@
       link.rel = "noopener";
     });
 
-    populateSelect(elements.area, data.bills.map((bill) => bill.area));
-    populateSelect(elements.issue, data.bills.map((bill) => bill.issue_group));
-    populateSelect(elements.stage, data.bills.map((bill) => bill.stage));
-    populateSelect(elements.fiscalFocus, data.bills.map((bill) => bill.fiscal_focus));
-    populateSelect(elements.attention, data.bills.map((bill) => bill.attention));
+    refreshFiltersForArea();
     renderBills();
-    renderUpdates(data.key_updates);
-    renderLandscape(data.policy_landscape);
+    renderAreaSummary();
     bindControls();
   }
 

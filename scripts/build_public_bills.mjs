@@ -74,6 +74,7 @@ const bills = source.coreBills.map((bill) => {
   const summary = officialSummary(bill);
   return {
     id: bill.objectName,
+    tracker_area: "crypto-digital-assets",
     area: bill.area ?? "Crypto and digital assets",
     attention: bill.attention,
     bill: bill.bill,
@@ -101,14 +102,41 @@ const bills = source.coreBills.map((bill) => {
   };
 });
 
-const countStage = (stage) => bills.filter((bill) => bill.stage === stage).length;
+const summarizeBills = (areaBills) => ({
+  tracked: areaBills.length,
+  tax_revenue: areaBills.filter((bill) => bill.fiscal_focus === "Tax / revenue").length,
+  hearings_scheduled: areaBills.filter((bill) => bill.upcoming_hearing).length,
+  passed_chamber: areaBills.filter((bill) => bill.stage === "Passed chamber").length,
+  third_reading: areaBills.filter((bill) => bill.status.toLowerCase().includes("third reading")).length,
+  enacted: areaBills.filter((bill) => bill.stage === "Enacted").length,
+});
+const cryptoPolicyLandscape = source.policyLandscape.map((item) => ({
+  area: item.area,
+  bill_count: item.billCount,
+  bills: item.bills,
+  current_picture: item.currentPicture,
+  status: item.status,
+  tax_design_lens: item.taxDesignLens,
+}));
+const trackerAreas = [{
+  id: "crypto-digital-assets",
+  label: "Crypto & digital assets",
+  headline: source.headline.replace("No core bill", "No tracked bill"),
+  landscape_title: "Crypto & digital-assets policy landscape",
+  landscape_description:
+    "The 22 tracked bills organized by what they govern and what they can teach us about potential tax design.",
+  monitoring_rule:
+    "Every crypto bill is reviewed for potential tax-design lessons. A bill enters the fiscal-note queue only when an official committee hearing is scheduled.",
+  summary: summarizeBills(bills),
+  policy_landscape: cryptoPolicyLandscape,
+}];
 const publicData = {
   metadata: {
-    title: "Michigan Bill Tracker",
+    title: "Michigan Tax Policy Tracker",
     jurisdiction: "Michigan",
     session: source.session,
     as_of: source.asOf,
-    headline: source.headline.replace("No core bill", "No tracked bill"),
+    headline: "Select a tax area to view related bills, fiscal-note priorities, and the policy landscape.",
     disclaimer:
       "Personal public-source tracker. Not an official publication or position of the Michigan Department of Treasury or State of Michigan.",
     source_label: "Michigan Legislature",
@@ -116,27 +144,14 @@ const publicData = {
     hearing_schedule_checked: source.hearingSchedule.checkedAt,
     hearing_schedule_url: source.hearingSchedule.officialUrl,
   },
-  summary: {
-    tracked: bills.length,
-    tax_revenue: bills.filter((bill) => bill.fiscal_focus === "Tax / revenue").length,
-    hearings_scheduled: bills.filter((bill) => bill.upcoming_hearing).length,
-    passed_chamber: countStage("Passed chamber"),
-    third_reading: bills.filter((bill) => bill.status.toLowerCase().includes("third reading")).length,
-    enacted: countStage("Enacted"),
-  },
+  summary: summarizeBills(bills),
+  tracker_areas: trackerAreas,
   bills,
-  policy_landscape: source.policyLandscape.map((item) => ({
-    area: item.area,
-    bill_count: item.billCount,
-    bills: item.bills,
-    current_picture: item.currentPicture,
-    status: item.status,
-    tax_design_lens: item.taxDesignLens,
-  })),
   key_updates: source.keyUpdates.map(([date, billsLabel, update]) => ({
     date,
     bills: billsLabel,
     update,
+    tracker_area: "crypto-digital-assets",
   })),
 };
 

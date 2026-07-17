@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Michigan Bill Tracker
+title: Michigan Tax Policy Tracker
 permalink: /bills/
 sitemap: false
 robots: noindex,nofollow
@@ -12,11 +12,11 @@ bill_dashboard: true
   <section class="dashboard-heading" aria-labelledby="dashboard-title">
     <div>
       <p class="dashboard-kicker">Michigan Legislature <span aria-hidden="true">/</span> 2025-2026 session</p>
-      <h1 id="dashboard-title">Michigan Bill Tracker</h1>
+      <h1 id="dashboard-title">Michigan Tax Policy Tracker</h1>
       <p class="dashboard-headline" id="dashboard-headline">Loading current public-source status...</p>
     </div>
     <div class="dashboard-heading-actions">
-      <p class="checked-date"><span aria-hidden="true"></span> Checked <time id="as-of-date">July 17, 2026</time></p>
+      <p class="checked-date"><span class="checked-indicator" aria-hidden="true"></span><span>Checked</span><time id="as-of-date">July 17, 2026</time></p>
       <button class="secondary-button" id="copy-briefing" type="button">Copy briefing</button>
     </div>
   </section>
@@ -55,22 +55,24 @@ bill_dashboard: true
 
   <section class="tracker-workspace" aria-labelledby="tracked-bills-title">
     <div class="workspace-toolbar">
-      <div class="view-switcher" role="group" aria-label="Bill view">
-        <button class="view-button is-active" type="button" data-view="all" aria-pressed="true">All bills</button>
-        <button class="view-button" type="button" data-view="tax-revenue" aria-pressed="false">Tax &amp; revenue</button>
-        <button class="view-button" type="button" data-view="hearing" aria-pressed="false">Fiscal-note queue</button>
-      </div>
-      <label class="search-control">
-        <span class="visually-hidden">Search bills</span>
-        <input id="bill-search" type="search" placeholder="Search bill, policy, status" autocomplete="off">
+      <label class="tracker-area-control">
+        <span>Tax area</span>
+        <select id="tracker-area" aria-label="Tax area"></select>
       </label>
+      <div class="workspace-actions">
+        <div class="view-switcher" role="group" aria-label="Bill view">
+          <button class="view-button is-active" type="button" data-view="all" aria-pressed="true">All bills</button>
+          <button class="view-button" type="button" data-view="tax-revenue" aria-pressed="false">Tax &amp; revenue</button>
+          <button class="view-button" type="button" data-view="hearing" aria-pressed="false">Fiscal-note queue</button>
+        </div>
+        <label class="search-control">
+          <span class="visually-hidden">Search bills</span>
+          <input id="bill-search" type="search" placeholder="Search bill, policy, status" autocomplete="off">
+        </label>
+      </div>
     </div>
 
     <div class="filter-row">
-      <label>
-        <span>Policy area</span>
-        <select id="area-filter"><option value="">All policy areas</option></select>
-      </label>
       <label>
         <span>Issue</span>
         <select id="issue-filter"><option value="">All issues</option></select>
@@ -123,22 +125,22 @@ bill_dashboard: true
   <section class="update-band" aria-labelledby="recent-updates-title">
     <div class="section-heading">
       <h2 id="recent-updates-title">Recent material updates</h2>
-      <p>Official history changes that affect the tracker summary.</p>
+      <p id="recent-updates-description">Official history changes that affect the tracker summary.</p>
     </div>
     <ol class="update-list" id="update-list"></ol>
   </section>
 
   <section class="landscape-section" id="policy-landscape" aria-labelledby="policy-landscape-title">
     <div class="section-heading">
-      <h2 id="policy-landscape-title">Michigan crypto policy landscape</h2>
-      <p>The 22 tracked bills organized by what they govern and what they can teach us about potential tax design.</p>
+      <h2 id="policy-landscape-title">Policy landscape</h2>
+      <p id="policy-landscape-description">Tracked bills organized by what they govern and what they can teach us about potential tax design.</p>
     </div>
     <div class="landscape-list" id="landscape-list"></div>
   </section>
 
   <footer class="dashboard-notes">
     <p><strong>Status rule:</strong> A committee referral or calendar listing is not enactment. Bill histories are checked against official Michigan Legislature records.</p>
-    <p><strong>Monitoring rule:</strong> Every crypto bill is reviewed for potential tax-design lessons. A bill enters the fiscal-note queue only when an official committee hearing is scheduled.</p>
+    <p><strong>Monitoring rule:</strong> <span id="monitoring-rule">Every tracked bill is reviewed for potential tax-design lessons. A bill enters the fiscal-note queue only when an official committee hearing is scheduled.</span></p>
     <p><strong>Analysis scope:</strong> Important notes and drafting ambiguities are currently maintained for tax and revenue bills.</p>
     <p>Last public-source review: <time id="notes-as-of">July 17, 2026</time>.</p>
   </footer>
