@@ -204,7 +204,6 @@
     const filtered = state.data.bills.filter((bill) => {
       if (state.view === "tax-revenue" && bill.fiscal_focus !== "Tax / revenue") return false;
       if (state.view === "hearing" && !bill.upcoming_hearing) return false;
-      if (state.view === "kiosk" && bill.issue_group !== "Kiosk regulation and bans") return false;
       if (state.area && bill.area !== state.area) return false;
       if (state.issue && bill.issue_group !== state.issue) return false;
       if (state.stage && bill.stage !== state.stage) return false;
