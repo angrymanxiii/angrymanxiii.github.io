@@ -9,8 +9,10 @@
     empty: document.querySelector("#empty-state"),
     count: document.querySelector("#results-count"),
     search: document.querySelector("#bill-search"),
+    area: document.querySelector("#area-filter"),
     issue: document.querySelector("#issue-filter"),
     stage: document.querySelector("#stage-filter"),
+    fiscalFocus: document.querySelector("#fiscal-focus-filter"),
     attention: document.querySelector("#attention-filter"),
     sort: document.querySelector("#sort-bills"),
     clear: document.querySelector("#clear-filters"),
@@ -23,10 +25,12 @@
     data: null,
     view: "all",
     query: "",
+    area: "",
     issue: "",
     stage: "",
+    fiscalFocus: "",
     attention: "",
-    sort: "attention",
+    sort: "priority",
   };
 
   const attentionRank = {
@@ -35,6 +39,12 @@
     "Tax watch": 2,
     "Policy watch": 3,
     Monitor: 4,
+  };
+
+  const fiscalFocusRank = {
+    "Tax / revenue": 0,
+    "Fiscal exposure": 1,
+    "Policy only": 2,
   };
 
   function escapeHtml(value) {
@@ -94,10 +104,28 @@
     const analysisLabel = bill.analysis_url.includes("billanalysis")
       ? "Public analysis"
       : "Introduced text";
+    const hearingPill = bill.upcoming_hearing
+      ? '<span class="priority-pill hearing-pill">Hearing scheduled</span>'
+      : "";
+    const fiscalPill = bill.fiscal_focus === "Tax / revenue"
+      ? '<span class="priority-pill revenue-pill">Tax / revenue</span>'
+      : "";
+    const hearingDetail = bill.upcoming_hearing
+      ? `<section class="hearing-detail">
+          <h3>Upcoming committee hearing</h3>
+          <p><strong>${escapeHtml(bill.upcoming_hearing.committee)}</strong> on
+            <time datetime="${escapeHtml(bill.upcoming_hearing.date)}">${escapeHtml(formatDate(bill.upcoming_hearing.date))}</time>${bill.upcoming_hearing.time ? ` at ${escapeHtml(bill.upcoming_hearing.time)}` : ""}${bill.upcoming_hearing.location ? `, ${escapeHtml(bill.upcoming_hearing.location)}` : ""}.
+          </p>
+        </section>`
+      : "";
 
     detail.innerHTML = `
       <summary>
-        <span><span class="attention-pill attention-${slug(bill.attention)}">${escapeHtml(bill.attention)}</span></span>
+        <span class="priority-stack">
+          ${hearingPill}
+          ${fiscalPill}
+          <span class="attention-pill attention-${slug(bill.attention)}">${escapeHtml(bill.attention)}</span>
+        </span>
         <span class="bill-identity">
           <strong>${escapeHtml(bill.bill)}</strong>
           <span>${escapeHtml(bill.issue_group)}</span>
@@ -110,9 +138,11 @@
         <a class="record-link" href="${escapeHtml(officialUrl(bill.official_url))}">Bill history</a>
       </summary>
       <div class="bill-details">
+        ${hearingDetail}
         <section class="detail-block">
           <h3>Tax and fiscal relevance</h3>
           <p>${escapeHtml(bill.tax_fiscal)}</p>
+          <p class="fiscal-channel"><strong>${escapeHtml(bill.fiscal_focus)}:</strong> ${escapeHtml(bill.fiscal_channel)}</p>
         </section>
         <section class="detail-block">
           <h3>Latest official action</h3>
@@ -140,18 +170,24 @@
   function visibleBills() {
     const query = state.query.trim().toLowerCase();
     const filtered = state.data.bills.filter((bill) => {
-      if (state.view === "attention" && bill.attention === "Monitor") return false;
+      if (state.view === "tax-revenue" && bill.fiscal_focus !== "Tax / revenue") return false;
+      if (state.view === "hearing" && !bill.upcoming_hearing) return false;
       if (state.view === "kiosk" && bill.issue_group !== "Kiosk regulation and bans") return false;
+      if (state.area && bill.area !== state.area) return false;
       if (state.issue && bill.issue_group !== state.issue) return false;
       if (state.stage && bill.stage !== state.stage) return false;
+      if (state.fiscalFocus && bill.fiscal_focus !== state.fiscalFocus) return false;
       if (state.attention && bill.attention !== state.attention) return false;
       if (!query) return true;
 
       const searchable = [
         bill.bill,
+        bill.area,
         bill.issue_group,
         bill.policy,
         bill.tax_fiscal,
+        bill.fiscal_focus,
+        bill.fiscal_channel,
         bill.status,
         bill.latest_action,
         bill.sponsor,
@@ -166,6 +202,8 @@
       }
       if (state.sort === "bill") return a.bill.localeCompare(b.bill, undefined, { numeric: true });
       return (
+        Number(Boolean(b.upcoming_hearing)) - Number(Boolean(a.upcoming_hearing)) ||
+        (fiscalFocusRank[a.fiscal_focus] ?? 99) - (fiscalFocusRank[b.fiscal_focus] ?? 99) ||
         (attentionRank[a.attention] ?? 99) - (attentionRank[b.attention] ?? 99) ||
         b.latest_action_date.localeCompare(a.latest_action_date) ||
         a.bill.localeCompare(b.bill, undefined, { numeric: true })
@@ -216,15 +254,19 @@
 
   function briefingText() {
     const { metadata, summary, bills, key_updates: updates } = state.data;
-    const watch = bills
-      .filter((bill) => ["Escalate", "Floor watch", "Tax watch"].includes(bill.attention))
-      .sort((a, b) => (attentionRank[a.attention] ?? 99) - (attentionRank[b.attention] ?? 99))
+    const taxRevenueWatch = bills
+      .filter((bill) => bill.fiscal_focus === "Tax / revenue")
+      .sort((a, b) => Number(Boolean(b.upcoming_hearing)) - Number(Boolean(a.upcoming_hearing)) || (attentionRank[a.attention] ?? 99) - (attentionRank[b.attention] ?? 99))
       .map((bill) => `${bill.bill}: ${bill.status}`)
       .join("; ");
+    const hearingPriority = summary.hearings_scheduled
+      ? bills.filter((bill) => bill.upcoming_hearing).map((bill) => `${bill.bill} (${formatDate(bill.upcoming_hearing.date)})`).join("; ")
+      : `None scheduled as of ${formatDate(metadata.hearing_schedule_checked)}`;
     return [
       `Michigan crypto bill tracker, checked ${formatDate(metadata.as_of)}.`,
-      `${summary.tracked} bills tracked; ${summary.enacted} enacted; ${summary.passed_chamber} passed a chamber; ${summary.third_reading} on third reading.`,
-      `Current watch: ${watch}.`,
+      `${summary.tracked} bills tracked; ${summary.tax_revenue} directly affect tax or revenue; ${summary.enacted} enacted; ${summary.passed_chamber} passed a chamber.`,
+      `Fiscal-note hearing priority: ${hearingPriority}.`,
+      `Tax/revenue watch: ${taxRevenueWatch}.`,
       `Latest update: ${updates[0].bills} - ${updates[0].update}`,
       "Personal public-source tracker; not an official Treasury or State of Michigan publication.",
     ].join("\n");
@@ -244,15 +286,19 @@
 
   function resetFilters() {
     state.query = "";
+    state.area = "";
     state.issue = "";
     state.stage = "";
+    state.fiscalFocus = "";
     state.attention = "";
-    state.sort = "attention";
+    state.sort = "priority";
     elements.search.value = "";
+    elements.area.value = "";
     elements.issue.value = "";
     elements.stage.value = "";
+    elements.fiscalFocus.value = "";
     elements.attention.value = "";
-    elements.sort.value = "attention";
+    elements.sort.value = "priority";
     renderBills();
   }
 
@@ -261,12 +307,20 @@
       state.query = elements.search.value;
       renderBills();
     });
+    elements.area.addEventListener("change", () => {
+      state.area = elements.area.value;
+      renderBills();
+    });
     elements.issue.addEventListener("change", () => {
       state.issue = elements.issue.value;
       renderBills();
     });
     elements.stage.addEventListener("change", () => {
       state.stage = elements.stage.value;
+      renderBills();
+    });
+    elements.fiscalFocus.addEventListener("change", () => {
+      state.fiscalFocus = elements.fiscalFocus.value;
       renderBills();
     });
     elements.attention.addEventListener("change", () => {
@@ -289,9 +343,6 @@
           candidate.setAttribute("aria-pressed", String(active));
         });
         renderBills();
-        if (state.view === "kiosk") {
-          document.querySelector("#kiosk-comparison").scrollIntoView({ behavior: "smooth", block: "nearest" });
-        }
       });
     });
   }
@@ -303,10 +354,18 @@
     setText("#notes-as-of", formatDate(data.metadata.as_of));
     document.querySelector("#as-of-date").dateTime = data.metadata.as_of;
     document.querySelector("#notes-as-of").dateTime = data.metadata.as_of;
-    setText("#metric-tracked", data.summary.tracked);
+    setText("#metric-tax-revenue", data.summary.tax_revenue);
+    setText("#metric-hearings", data.summary.hearings_scheduled);
     setText("#metric-passed", data.summary.passed_chamber);
-    setText("#metric-third-reading", data.summary.third_reading);
     setText("#metric-enacted", data.summary.enacted);
+
+    if (data.summary.hearings_scheduled) {
+      setText("#hearing-watch-title", `${data.summary.hearings_scheduled} tracked ${data.summary.hearings_scheduled === 1 ? "bill has" : "bills have"} an upcoming hearing.`);
+      setText("#hearing-watch-detail", "These are the first fiscal-note priority.");
+    } else {
+      setText("#hearing-watch-title", "No tracked bill has an upcoming committee hearing.");
+      setText("#hearing-watch-detail", `Official schedule checked ${formatDate(data.metadata.hearing_schedule_checked)}.`);
+    }
 
     const sourceLink = document.querySelector("#legislature-source");
     sourceLink.textContent = data.metadata.source_label;
@@ -314,8 +373,17 @@
     sourceLink.target = "_blank";
     sourceLink.rel = "noopener";
 
+    ["#schedule-source", "#hearing-schedule-source"].forEach((selector) => {
+      const link = document.querySelector(selector);
+      link.href = officialUrl(data.metadata.hearing_schedule_url);
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
+
+    populateSelect(elements.area, data.bills.map((bill) => bill.area));
     populateSelect(elements.issue, data.bills.map((bill) => bill.issue_group));
     populateSelect(elements.stage, data.bills.map((bill) => bill.stage));
+    populateSelect(elements.fiscalFocus, data.bills.map((bill) => bill.fiscal_focus));
     populateSelect(elements.attention, data.bills.map((bill) => bill.attention));
     renderBills();
     renderUpdates(data.key_updates);

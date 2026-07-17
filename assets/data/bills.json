@@ -7,10 +7,14 @@
     "headline": "No tracked bill is enacted. One has passed the House; two are on House third reading.",
     "disclaimer": "Personal public-source tracker. Not an official publication or position of the Michigan Department of Treasury or State of Michigan.",
     "source_label": "Michigan Legislature",
-    "source_url": "https://www.legislature.mi.gov/Bills/"
+    "source_url": "https://www.legislature.mi.gov/Bills/",
+    "hearing_schedule_checked": "2026-07-17",
+    "hearing_schedule_url": "https://www.legislature.mi.gov/Committees/Meetings"
   },
   "summary": {
     "tracked": 22,
+    "tax_revenue": 4,
+    "hearings_scheduled": 0,
     "passed_chamber": 1,
     "third_reading": 2,
     "enacted": 0
@@ -24,6 +28,8 @@
       "issue_group": "Mining and siting",
       "policy": "Makes digital-asset mining over 1 MW a permitted industrial-zone use and bars mining-specific special-use, zoning, and noise restrictions not applied to comparable data centers.",
       "tax_fiscal": "HFA: no direct state or local fiscal impact; local zoning authority is preempted.",
+      "fiscal_focus": "Policy only",
+      "fiscal_channel": "No direct fiscal effect",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-03-19",
@@ -32,7 +38,8 @@
       "related_bills": "HB 5882",
       "next_trigger": "Committee hearing, substitute, or report to the House floor.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4085",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4085-XT4KCGNL.pdf"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4085-XT4KCGNL.pdf",
+      "upcoming_hearing": null
     },
     {
       "id": "2025-HB-4086",
@@ -42,6 +49,8 @@
       "issue_group": "State assets and payments",
       "policy": "Creates a Treasury bullion depository and Michcoin, a state-issued gold- and silver-backed digital currency with wallets, transfer, redemption, fees, bonds, and trust custody.",
       "tax_fiscal": "Potential Treasury startup, custody, bond, and operating exposure; fees are authorized; no public fiscal analysis located.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Treasury startup, fees, bonds, and custody",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-03-19",
@@ -50,7 +59,8 @@
       "related_bills": "HB 4087",
       "next_trigger": "Committee hearing, fiscal analysis, or substitute addressing Treasury capitalization and custody.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4086",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-4086.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-4086.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2025-HB-4087",
@@ -60,6 +70,8 @@
       "issue_group": "State assets and payments",
       "policy": "Allows the Treasurer to invest up to 10% of both the General Fund and Budget Stabilization Fund in cryptocurrency, establish custody, lend holdings, and process crypto-paid taxes or fees.",
       "tax_fiscal": "HFA: no direct impact, but creates market exposure for GF and BSF balances; crypto receipts would be moved to GF with other funds reimbursed in dollars.",
+      "fiscal_focus": "Tax / revenue",
+      "fiscal_channel": "Tax receipts and state fund assets",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-03-19",
@@ -68,7 +80,8 @@
       "related_bills": "HB 4086",
       "next_trigger": "Committee action or amendment to the 10% cap, eligible funds, custody, or lending authority.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4087",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4087-BMQJGDZ3.pdf"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4087-BMQJGDZ3.pdf",
+      "upcoming_hearing": null
     },
     {
       "id": "2025-HB-4510",
@@ -78,6 +91,8 @@
       "issue_group": "State assets and payments",
       "policy": "Allows up to 5% of State Investment Board-managed retirement assets in cryptocurrency averaging at least $100 billion market capitalization; direct holdings must use an approved exchange-traded product.",
       "tax_fiscal": "HFA: no direct impact; pension and OPEB effects depend on investment decisions and returns.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Public retirement assets",
       "status": "House floor - third reading",
       "stage": "Floor",
       "latest_action_date": "2026-03-11",
@@ -86,7 +101,8 @@
       "related_bills": "HB 4087",
       "next_trigger": "House passage, floor amendment, or removal from the calendar.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4510",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4510-8C5ZT6JP.pdf"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4510-8C5ZT6JP.pdf",
+      "upcoming_hearing": null
     },
     {
       "id": "2025-HB-4511",
@@ -96,6 +112,8 @@
       "issue_group": "Digital-asset rights and tax",
       "policy": "Preempts bans, licensing, and extra taxes based solely on digital-asset use; protects nodes, transfers, and staking; restricts state CBDC advocacy and certain validator liability.",
       "tax_fiscal": "HFA: no direct impact. Crypto-only taxes or charges are barred, while ordinary taxes on the underlying transaction remain allowed.",
+      "fiscal_focus": "Tax / revenue",
+      "fiscal_channel": "Tax preemption",
       "status": "House floor - third reading",
       "stage": "Floor",
       "latest_action_date": "2026-03-11",
@@ -104,7 +122,8 @@
       "related_bills": "HB 5132",
       "next_trigger": "House passage or amendment to tax preemption, staking, CBDC, or liability provisions.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4511",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4511-J29ZLP4Y.pdf"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4511-J29ZLP4Y.pdf",
+      "upcoming_hearing": null
     },
     {
       "id": "2025-HB-4512",
@@ -114,6 +133,8 @@
       "issue_group": "Mining and siting",
       "policy": "Creates an EGLE program allowing selected firms to use gas from abandoned wells to power bitcoin mining in exchange for plugging, response activity, and site restoration obligations.",
       "tax_fiscal": "HFA: indeterminate Orphan Well Fund costs and revenues; the fund could support startup costs and administration.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Orphan Well Fund and program administration",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-03-19",
@@ -122,7 +143,8 @@
       "related_bills": "HB 4513 (tie-barred)",
       "next_trigger": "Committee action, program funding changes, or movement of the tie-barred tax deduction.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4512",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4512-0D9Y72FK.pdf"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4512-0D9Y72FK.pdf",
+      "upcoming_hearing": null
     },
     {
       "id": "2025-HB-4513",
@@ -132,6 +154,8 @@
       "issue_group": "Digital-asset rights and tax",
       "policy": "Deducts income attributable to bitcoin mining under HB 4512's abandoned-well program from IIT, CIT, and flow-through entity business income tax bases.",
       "tax_fiscal": "Direct tax-base reduction. HFA: indeterminate revenue loss depending on whether subsidized mining would occur without the deduction.",
+      "fiscal_focus": "Tax / revenue",
+      "fiscal_channel": "IIT, CIT, and flow-through entity tax bases",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-03-19",
@@ -140,7 +164,8 @@
       "related_bills": "HB 4512 (tie-barred)",
       "next_trigger": "Committee action or amendment to eligible income, taxes, duration, or tie-bar.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4513",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4512-0D9Y72FK.pdf"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2025-HLA-4512-0D9Y72FK.pdf",
+      "upcoming_hearing": null
     },
     {
       "id": "2025-HB-5132",
@@ -150,6 +175,8 @@
       "issue_group": "Digital-asset rights and tax",
       "policy": "Protects lawful convertible-virtual-currency use, self-hosted wallets, and collateral; bars state or local tax and tax reporting on covered transactions below $200 and authorizes treble damages.",
       "tax_fiscal": "Direct de minimis tax and reporting exemption below $200, plus governmental litigation exposure; no public fiscal analysis located.",
+      "fiscal_focus": "Tax / revenue",
+      "fiscal_channel": "De minimis tax and reporting exemption",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2025-10-23",
@@ -158,7 +185,8 @@
       "related_bills": "HB 4511",
       "next_trigger": "Finance hearing or amendment to the $200 threshold, covered taxes, reporting, or treble damages.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5132",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-5132.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-5132.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-5469",
@@ -168,6 +196,8 @@
       "issue_group": "Kiosk regulation and bans",
       "policy": "Regulates virtual-currency kiosks through disclosures, warnings, receipts, blockchain analytics, antifraud and due-diligence policies, compliance officers, quarterly DIFS reporting, and local preemption.",
       "tax_fiscal": "Indeterminate DIFS, court, and civil-fine effects; up to $1,000 per knowing and willful violation; no tax-base change.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Civil fines and DIFS administration",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-01-22",
@@ -176,7 +206,8 @@
       "related_bills": "HB 5470 (tie-barred)",
       "next_trigger": "Committee action or consolidation with later kiosk regulation and ban packages.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5469",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5469-B8WMLQD1.pdf"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5469-B8WMLQD1.pdf",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-5470",
@@ -186,6 +217,8 @@
       "issue_group": "Kiosk regulation and bans",
       "policy": "Treats owning, operating, facilitating, marketing, or advertising a virtual-currency kiosk as licensed money transmission and subjects operators to existing bonding requirements.",
       "tax_fiscal": "Licensing and surety-bond coverage; no direct tax-base change identified.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Licensing and surety bonds",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-01-22",
@@ -194,7 +227,8 @@
       "related_bills": "HB 5469 (tie-barred)",
       "next_trigger": "Committee action or interaction with the HB 5544 money-transmitter rewrite.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5470",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5469-B8WMLQD1.pdf"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5469-B8WMLQD1.pdf",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-5544",
@@ -204,6 +238,8 @@
       "issue_group": "Money transmission",
       "policy": "Replaces Michigan's money-transmission act with the CSBS model framework effective July 1, 2027. Pure virtual-currency exchange, transfer, or custody is excluded when no legal-tender transfer is involved.",
       "tax_fiscal": "HFA: likely minimal one-time DIFS cost; licensing, penalties, and criminal-justice effects are indeterminate. This is regulation, not a crypto tax.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "DIFS administration, licensing, and penalties",
       "status": "Senate committee - House passed",
       "stage": "Passed chamber",
       "latest_action_date": "2026-07-01",
@@ -212,7 +248,8 @@
       "related_bills": "HB 5545-HB 5550; SB 835",
       "next_trigger": "Senate committee hearing, substitute, report, or substitution for SB 835.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5544",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5544-MXQS93C5.pdf"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billanalysis/House/pdf/2026-HLA-5544-MXQS93C5.pdf",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-SB-0835",
@@ -222,6 +259,8 @@
       "issue_group": "Money transmission",
       "policy": "Senate version of a Money Transmission Modernization Act that replaces the current act and expressly addresses when virtual-currency activity falls outside money transmission.",
       "tax_fiscal": "Regulatory and licensing effects; no public fiscal analysis located. Compare against House-passed HB 5544 before relying on details.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Licensing and regulation",
       "status": "Senate committee",
       "stage": "Committee",
       "latest_action_date": "2026-03-17",
@@ -230,7 +269,8 @@
       "related_bills": "HB 5544-HB 5550",
       "next_trigger": "Committee substitution, merger with HB 5544, or Senate report.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0835",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2026-SIB-0835.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2026-SIB-0835.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-5670",
@@ -240,6 +280,8 @@
       "issue_group": "State assets and payments",
       "policy": "Beginning January 1, 2027, requires a digital-currency wage option for classified salaried state employees, with at least six choices including Bitcoin and excluding a government-controlled digital currency.",
       "tax_fiscal": "Potential payroll, vendor, custody, conversion, withholding, and administrative costs; no public fiscal analysis located.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "State payroll, conversion, and withholding administration",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-03-05",
@@ -248,7 +290,8 @@
       "related_bills": "None identified",
       "next_trigger": "Committee hearing, fiscal analysis, or amendment addressing conversion timing and tax withholding.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5670",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5670.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5670.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-5777",
@@ -258,6 +301,8 @@
       "issue_group": "Data centers and mining",
       "policy": "Creates registration, financial-security, decommissioning, and reporting requirements for large-scale data centers, expressly including qualifying cryptocurrency-mining facilities.",
       "tax_fiscal": "Registration fees of $25,000-$100,000, reimbursement and financial-security requirements, and a dedicated fund; no public fiscal analysis located.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Registration fees and dedicated fund",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-04-14",
@@ -266,7 +311,8 @@
       "related_bills": "HB 5881-HB 5882",
       "next_trigger": "Committee action or changes to thresholds, fees, financial security, or mining coverage.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5777",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5777.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5777.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-5882",
@@ -276,6 +322,8 @@
       "issue_group": "Data centers and mining",
       "policy": "Regulates local moratoria on large data centers and cryptocurrency-mining facilities: initial moratoriums are capped at six months with one extension up to 90 days and specified public-process requirements.",
       "tax_fiscal": "Potential local planning and study costs; no direct tax-base change identified.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Local planning costs",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-04-23",
@@ -284,7 +332,8 @@
       "related_bills": "HB 5881 (tie-barred); HB 5777",
       "next_trigger": "Committee action or amendment to moratorium duration, disclosure, or local authority.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5882",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5882.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5882.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-5986",
@@ -294,6 +343,8 @@
       "issue_group": "Kiosk regulation and bans",
       "policy": "Prohibits installing, operating, or allowing a cryptocurrency kiosk on controlled premises.",
       "tax_fiscal": "Civil fine up to $100 per day deposited in GF; possible prosecutor and Attorney General costs; no tax-base change.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "GF fines and enforcement",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-05-19",
@@ -302,7 +353,8 @@
       "related_bills": "HB 5987 (tie-barred); SB 980",
       "next_trigger": "Committee action or consolidation with other kiosk-ban and regulation bills.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5986",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5986.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5986.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-5987",
@@ -312,6 +364,8 @@
       "issue_group": "Kiosk regulation and bans",
       "policy": "Allows the Lottery Commissioner to suspend a lottery sales-agent license for violation of HB 5986's cryptocurrency-kiosk prohibition.",
       "tax_fiscal": "Potential lottery license and retailer effects; no direct tax-base change identified.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Lottery licensing",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-05-19",
@@ -320,7 +374,8 @@
       "related_bills": "HB 5986 (tie-barred)",
       "next_trigger": "Movement of HB 5986 or changes to lottery-license sanctions.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5987",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5987.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-5987.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-SB-0980",
@@ -330,6 +385,8 @@
       "issue_group": "Kiosk regulation and bans",
       "policy": "Prohibits installing, operating, or allowing a cryptocurrency kiosk on controlled premises, using state civil infractions rather than criminal penalties.",
       "tax_fiscal": "Civil fines of $2,000-$5,000 for a first violation and $5,000-$10,000 for later violations; no tax-base change.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Civil fines",
       "status": "Senate committee",
       "stage": "Committee",
       "latest_action_date": "2026-05-19",
@@ -338,7 +395,8 @@
       "related_bills": "HB 5986-HB 5987",
       "next_trigger": "Committee hearing or selection of this bill over competing House kiosk approaches.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0980",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2026-SIB-0980.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2026-SIB-0980.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-6077",
@@ -348,6 +406,8 @@
       "issue_group": "Kiosk regulation and bans",
       "policy": "Prohibits operating or allowing a virtual-currency kiosk and makes violations felonies, with enhanced penalties for vulnerable-adult transactions, losses above $50,000, or organized fraud.",
       "tax_fiscal": "Criminal-justice and enforcement costs; fines up to $50,000 or $100,000, transaction-based multiples, forfeiture, and injunctions; no tax-base change.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Fines and criminal justice",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-06-11",
@@ -356,7 +416,8 @@
       "related_bills": "HB 6078 (tie-barred)",
       "next_trigger": "Committee action or reconciliation with civil-ban and regulatory kiosk packages.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6077",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6077.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6077.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-6078",
@@ -366,6 +427,8 @@
       "issue_group": "Kiosk regulation and bans",
       "policy": "Adds HB 6077's virtual-currency-kiosk offenses to Michigan's sentencing guidelines.",
       "tax_fiscal": "Sentencing companion with possible corrections and court costs; no tax-base change.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Corrections and courts",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-06-11",
@@ -374,7 +437,8 @@
       "related_bills": "HB 6077 (tie-barred)",
       "next_trigger": "Movement or amendment of HB 6077.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6078",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6078.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6078.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-6222",
@@ -384,6 +448,8 @@
       "issue_group": "Kiosk regulation and bans",
       "policy": "Regulates rather than bans physical crypto kiosks with a $500 daily per-operator cap, 24-hour new-user hold, secure locations, scam warnings, receipts, records, and Attorney General enforcement.",
       "tax_fiscal": "Indeterminate positive GF fines up to $10,000 or $25,000 per violating transaction and possible Attorney General costs; no tax-base change.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "GF fines and Attorney General enforcement",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-07-16",
@@ -392,7 +458,8 @@
       "related_bills": "HB 6223 (tie-barred)",
       "next_trigger": "Committee hearing, substitute, HFA analysis, or consolidation with the kiosk-ban bills.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6222",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6222.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6222.htm",
+      "upcoming_hearing": null
     },
     {
       "id": "2026-HB-6223",
@@ -402,6 +469,8 @@
       "issue_group": "Kiosk regulation and bans",
       "policy": "Makes a violation of HB 6222's cryptocurrency-exchange-kiosk regulation act an unlawful trade practice under the Michigan Consumer Protection Act.",
       "tax_fiscal": "Consumer-protection enforcement and private-remedy implications; no tax-base change.",
+      "fiscal_focus": "Fiscal exposure",
+      "fiscal_channel": "Consumer-protection enforcement",
       "status": "House committee",
       "stage": "Committee",
       "latest_action_date": "2026-07-16",
@@ -410,7 +479,8 @@
       "related_bills": "HB 6222 (tie-barred)",
       "next_trigger": "Movement or amendment of HB 6222 and clarification of MCPA remedies.",
       "official_url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6223",
-      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6223.htm"
+      "analysis_url": "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2026-HIB-6223.htm",
+      "upcoming_hearing": null
     }
   ],
   "kiosk_comparison": [

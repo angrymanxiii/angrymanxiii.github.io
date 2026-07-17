@@ -28,16 +28,16 @@ bill_dashboard: true
 
   <dl class="summary-strip" aria-label="Legislative summary">
     <div>
-      <dt>Tracked bills</dt>
-      <dd id="metric-tracked">--</dd>
+      <dt>Tax / revenue bills</dt>
+      <dd id="metric-tax-revenue">--</dd>
+    </div>
+    <div>
+      <dt>Hearings scheduled</dt>
+      <dd id="metric-hearings">--</dd>
     </div>
     <div>
       <dt>Passed a chamber</dt>
       <dd id="metric-passed">--</dd>
-    </div>
-    <div>
-      <dt>On third reading</dt>
-      <dd id="metric-third-reading">--</dd>
     </div>
     <div>
       <dt>Enacted</dt>
@@ -45,11 +45,20 @@ bill_dashboard: true
     </div>
   </dl>
 
+  <aside class="hearing-watch" aria-labelledby="hearing-watch-title">
+    <div>
+      <strong id="hearing-watch-title">Checking upcoming committee hearings...</strong>
+      <span id="hearing-watch-detail"></span>
+    </div>
+    <a id="hearing-schedule-source" href="https://www.legislature.mi.gov/Committees/Meetings">Official committee schedule</a>
+  </aside>
+
   <section class="tracker-workspace" aria-labelledby="tracked-bills-title">
     <div class="workspace-toolbar">
       <div class="view-switcher" role="group" aria-label="Bill view">
         <button class="view-button is-active" type="button" data-view="all" aria-pressed="true">All bills</button>
-        <button class="view-button" type="button" data-view="attention" aria-pressed="false">Needs attention</button>
+        <button class="view-button" type="button" data-view="tax-revenue" aria-pressed="false">Tax &amp; revenue</button>
+        <button class="view-button" type="button" data-view="hearing" aria-pressed="false">Hearing priority</button>
         <button class="view-button" type="button" data-view="kiosk" aria-pressed="false">Kiosk bills</button>
       </div>
       <label class="search-control">
@@ -60,6 +69,10 @@ bill_dashboard: true
 
     <div class="filter-row">
       <label>
+        <span>Policy area</span>
+        <select id="area-filter"><option value="">All policy areas</option></select>
+      </label>
+      <label>
         <span>Issue</span>
         <select id="issue-filter"><option value="">All issues</option></select>
       </label>
@@ -68,13 +81,17 @@ bill_dashboard: true
         <select id="stage-filter"><option value="">All stages</option></select>
       </label>
       <label>
+        <span>Fiscal focus</span>
+        <select id="fiscal-focus-filter"><option value="">All fiscal levels</option></select>
+      </label>
+      <label>
         <span>Attention</span>
         <select id="attention-filter"><option value="">All levels</option></select>
       </label>
       <label>
         <span>Sort</span>
         <select id="sort-bills">
-          <option value="attention">Attention</option>
+          <option value="priority">Fiscal-note priority</option>
           <option value="latest">Latest action</option>
           <option value="bill">Bill number</option>
         </select>
@@ -87,11 +104,14 @@ bill_dashboard: true
         <h2 id="tracked-bills-title">Tracked bills</h2>
         <p id="results-count" aria-live="polite">Loading bill records...</p>
       </div>
-      <a class="source-link" id="legislature-source" href="https://www.legislature.mi.gov/Bills/">Michigan Legislature</a>
+      <div class="source-links">
+        <a class="source-link" id="legislature-source" href="https://www.legislature.mi.gov/Bills/">Michigan Legislature</a>
+        <a class="source-link" id="schedule-source" href="https://www.legislature.mi.gov/Committees/Meetings">Committee schedule</a>
+      </div>
     </div>
 
     <div class="bill-column-headings" aria-hidden="true">
-      <span>Attention</span>
+      <span>Priority</span>
       <span>Bill and issue</span>
       <span>Policy</span>
       <span>Status</span>

@@ -13,6 +13,8 @@
   --tracker-amber-soft: #f7ecd8;
   --tracker-red: #a33838;
   --tracker-red-soft: #f6e5e3;
+  --tracker-purple: #783b78;
+  --tracker-purple-soft: #efe4f0;
   --tracker-gray-soft: #edf0ef;
 }
 
@@ -201,6 +203,35 @@ select {
   margin: 0;
 }
 
+.hearing-watch {
+  align-items: center;
+  background: var(--tracker-green-soft);
+  border: 1px solid var(--tracker-line);
+  border-radius: 6px;
+  color: var(--tracker-ink);
+  display: flex;
+  font-size: 0.82rem;
+  justify-content: space-between;
+  margin: 0 auto 1.35rem;
+  max-width: 88rem;
+  padding: 0.7rem 0.9rem;
+}
+
+.hearing-watch strong {
+  margin-right: 0.35rem;
+}
+
+.hearing-watch span {
+  color: var(--tracker-muted);
+}
+
+.hearing-watch a {
+  color: var(--tracker-blue);
+  flex-shrink: 0;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
 .tracker-workspace {
   background: var(--tracker-paper);
   border: 1px solid var(--tracker-line);
@@ -221,7 +252,7 @@ select {
   background: var(--tracker-gray-soft);
   border-radius: 6px;
   display: inline-grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(4, auto);
   padding: 3px;
 }
 
@@ -277,7 +308,7 @@ select {
   border-bottom: 1px solid var(--tracker-soft-line);
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: minmax(10rem, 1.2fr) repeat(3, minmax(8rem, 0.75fr)) auto;
+  grid-template-columns: repeat(6, minmax(7.8rem, 1fr)) auto;
   margin-top: 0.9rem;
   padding-bottom: 1rem;
 }
@@ -337,6 +368,13 @@ select {
   font-weight: 700;
 }
 
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  justify-content: flex-end;
+}
+
 .source-link::after,
 .record-link::after,
 .analysis-link::after {
@@ -348,7 +386,7 @@ select {
   align-items: center;
   display: grid;
   gap: 0.9rem;
-  grid-template-columns: 7rem minmax(9rem, 0.85fr) minmax(16rem, 1.8fr) minmax(11rem, 0.95fr) 6.8rem;
+  grid-template-columns: 8rem minmax(9rem, 0.85fr) minmax(16rem, 1.8fr) minmax(11rem, 0.95fr) 6.8rem;
 }
 
 .bill-column-headings {
@@ -392,7 +430,15 @@ select {
   background: #f8faf9;
 }
 
-.attention-pill {
+.priority-stack {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.attention-pill,
+.priority-pill {
   border-radius: 999px;
   display: inline-flex;
   font-size: 0.7rem;
@@ -402,6 +448,16 @@ select {
   max-width: 6.5rem;
   padding: 0.38rem 0.5rem;
   text-align: center;
+}
+
+.hearing-pill {
+  background: var(--tracker-red-soft);
+  color: var(--tracker-red);
+}
+
+.revenue-pill {
+  background: var(--tracker-purple-soft);
+  color: var(--tracker-purple);
 }
 
 .attention-escalate {
@@ -489,6 +545,32 @@ select {
 .detail-block p {
   font-size: 0.82rem;
   line-height: 1.48;
+  margin: 0;
+}
+
+.detail-block .fiscal-channel {
+  border-top: 1px solid var(--tracker-soft-line);
+  color: var(--tracker-muted);
+  margin-top: 0.65rem;
+  padding-top: 0.55rem;
+}
+
+.hearing-detail {
+  background: var(--tracker-green-soft);
+  border-left: 3px solid var(--tracker-green);
+  grid-column: 1 / -1;
+  padding: 0.7rem 0.8rem;
+}
+
+.hearing-detail h3 {
+  color: var(--tracker-green);
+  font-size: 0.7rem;
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+}
+
+.hearing-detail p {
+  font-size: 0.82rem;
   margin: 0;
 }
 
@@ -638,7 +720,7 @@ select {
 @media (max-width: 72rem) {
   .bill-column-headings,
   .bill-item > summary {
-    grid-template-columns: 6.5rem minmax(8rem, 0.75fr) minmax(15rem, 1.55fr) minmax(10rem, 0.9fr) 5.7rem;
+    grid-template-columns: 7.5rem minmax(8rem, 0.75fr) minmax(15rem, 1.55fr) minmax(10rem, 0.9fr) 5.7rem;
   }
 
   .comparison-grid {
@@ -646,7 +728,7 @@ select {
   }
 
   .filter-row {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .clear-button {
@@ -681,6 +763,16 @@ select {
 
   .filter-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hearing-watch {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .hearing-watch a {
+    margin-left: 0;
   }
 
   .bill-column-headings {
@@ -772,6 +864,7 @@ select {
   }
 
   .view-switcher {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
   }
 
@@ -833,6 +926,8 @@ select {
     --tracker-amber-soft: #513e22;
     --tracker-red: #efaaa5;
     --tracker-red-soft: #51302f;
+    --tracker-purple: #deb1de;
+    --tracker-purple-soft: #503450;
     --tracker-gray-soft: #333c39;
   }
 

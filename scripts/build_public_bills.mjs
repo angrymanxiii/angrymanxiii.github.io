@@ -25,14 +25,20 @@ function officialBillUrl(objectName) {
   return `https://www.legislature.mi.gov/Bills/Bill?ObjectName=${encodeURIComponent(objectName)}`;
 }
 
+const hearingByObjectName = new Map(
+  (source.hearingSchedule?.upcomingHearings ?? []).map((hearing) => [hearing.objectName, hearing]),
+);
+
 const bills = source.coreBills.map((bill) => ({
   id: bill.objectName,
-  area: "Crypto and digital assets",
+  area: bill.area ?? "Crypto and digital assets",
   attention: bill.attention,
   bill: bill.bill,
   issue_group: bill.issueGroup,
   policy: bill.policy,
   tax_fiscal: bill.taxFiscal,
+  fiscal_focus: bill.fiscalFocus,
+  fiscal_channel: bill.fiscalChannel,
   status: bill.status,
   stage: stageFor(bill.status),
   latest_action_date: bill.latestActionDate,
@@ -42,6 +48,7 @@ const bills = source.coreBills.map((bill) => ({
   next_trigger: bill.nextTrigger,
   official_url: officialBillUrl(bill.objectName),
   analysis_url: bill.analysisUrl,
+  upcoming_hearing: hearingByObjectName.get(bill.objectName) ?? null,
 }));
 
 const countStage = (stage) => bills.filter((bill) => bill.stage === stage).length;
@@ -56,9 +63,13 @@ const publicData = {
       "Personal public-source tracker. Not an official publication or position of the Michigan Department of Treasury or State of Michigan.",
     source_label: "Michigan Legislature",
     source_url: "https://www.legislature.mi.gov/Bills/",
+    hearing_schedule_checked: source.hearingSchedule.checkedAt,
+    hearing_schedule_url: source.hearingSchedule.officialUrl,
   },
   summary: {
     tracked: bills.length,
+    tax_revenue: bills.filter((bill) => bill.fiscal_focus === "Tax / revenue").length,
+    hearings_scheduled: bills.filter((bill) => bill.upcoming_hearing).length,
     passed_chamber: countStage("Passed chamber"),
     third_reading: bills.filter((bill) => bill.status.toLowerCase().includes("third reading")).length,
     enacted: countStage("Enacted"),
